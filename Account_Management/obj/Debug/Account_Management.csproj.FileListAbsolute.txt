@@ -1,0 +1,17 @@
+C:\Visual Studio\Account_Management\Account_Management\bin\Debug\Account_Management.exe.config
+C:\Visual Studio\Account_Management\Account_Management\obj\Debug\Account_Management.Form1.resources
+C:\Visual Studio\Account_Management\Account_Management\obj\Debug\Account_Management.Properties.Resources.resources
+C:\Visual Studio\Account_Management\Account_Management\obj\Debug\Account_Management.csproj.GenerateResource.Cache
+C:\Visual Studio\Account_Management\Account_Management\bin\Debug\Account_Management.exe
+C:\Visual Studio\Account_Management\Account_Management\bin\Debug\Account_Management.pdb
+C:\Visual Studio\Account_Management\Account_Management\obj\Debug\Account_Management.exe
+C:\Visual Studio\Account_Management\Account_Management\obj\Debug\Account_Management.pdb
+C:\Visual Studio\Account_Management\Account_Management\bin\Debug\EntityFramework.dll
+C:\Visual Studio\Account_Management\Account_Management\bin\Debug\EntityFramework.SqlServer.dll
+C:\Visual Studio\Account_Management\Account_Management\bin\Debug\System.Data.SQLite.dll
+C:\Visual Studio\Account_Management\Account_Management\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Visual Studio\Account_Management\Account_Management\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Visual Studio\Account_Management\Account_Management\bin\Debug\EntityFramework.xml
+C:\Visual Studio\Account_Management\Account_Management\bin\Debug\EntityFramework.SqlServer.xml
+C:\Visual Studio\Account_Management\Account_Management\bin\Debug\System.Data.SQLite.xml
+C:\Visual Studio\Account_Management\Account_Management\obj\Debug\Account_Management.AddItem.resources
