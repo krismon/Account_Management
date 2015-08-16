@@ -138,6 +138,8 @@
             this.label26 = new System.Windows.Forms.Label();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.ddlUserList = new System.Windows.Forms.ComboBox();
+            this.chkUnpaidInvoice = new System.Windows.Forms.CheckBox();
+            this.chkPartiallyPaid = new System.Windows.Forms.CheckBox();
             this.tabReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportTable)).BeginInit();
             this.Add_Rec.SuspendLayout();
@@ -899,6 +901,8 @@
             // 
             // tabSearchInvoice
             // 
+            this.tabSearchInvoice.Controls.Add(this.chkPartiallyPaid);
+            this.tabSearchInvoice.Controls.Add(this.chkUnpaidInvoice);
             this.tabSearchInvoice.Controls.Add(this.PrintSearchInvoice);
             this.tabSearchInvoice.Controls.Add(this.chkDueToday);
             this.tabSearchInvoice.Controls.Add(this.chkDueTo);
@@ -1400,6 +1404,26 @@
             this.ddlUserList.SelectedIndexChanged += new System.EventHandler(this.ddlUserList_SelectedIndexChanged);
             this.ddlUserList.TextChanged += new System.EventHandler(this.ddlUserList_TextChanged);
             // 
+            // chkUnpaidInvoice
+            // 
+            this.chkUnpaidInvoice.AutoSize = true;
+            this.chkUnpaidInvoice.Location = new System.Drawing.Point(101, 140);
+            this.chkUnpaidInvoice.Name = "chkUnpaidInvoice";
+            this.chkUnpaidInvoice.Size = new System.Drawing.Size(60, 17);
+            this.chkUnpaidInvoice.TabIndex = 78;
+            this.chkUnpaidInvoice.Text = "Unpaid";
+            this.chkUnpaidInvoice.UseVisualStyleBackColor = true;
+            // 
+            // chkPartiallyPaid
+            // 
+            this.chkPartiallyPaid.AutoSize = true;
+            this.chkPartiallyPaid.Location = new System.Drawing.Point(167, 140);
+            this.chkPartiallyPaid.Name = "chkPartiallyPaid";
+            this.chkPartiallyPaid.Size = new System.Drawing.Size(86, 17);
+            this.chkPartiallyPaid.TabIndex = 79;
+            this.chkPartiallyPaid.Text = "Partially Paid";
+            this.chkPartiallyPaid.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1548,6 +1572,8 @@
         private System.Windows.Forms.CheckBox chkInvoiceDatePkr;
         private System.Windows.Forms.Button PrintReportsPDF;
         private System.Windows.Forms.Button PrintSearchInvoice;
+        private System.Windows.Forms.CheckBox chkUnpaidInvoice;
+        private System.Windows.Forms.CheckBox chkPartiallyPaid;
     }
 }
 

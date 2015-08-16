@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Account_Management.exe" size="113616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Account_Management.exe" size="114640">
       <assemblyIdentity name="Account_Management" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zMRMjBtok+xVs4whi3OAU8JFM6YrL2goHmkAdXEyTd0=</dsig:DigestValue>
+        <dsig:DigestValue>cs9PL8cf9KmZLTgpQvncWYegI9WD+EoUl5LJa0sQtlI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

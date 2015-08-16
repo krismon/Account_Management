@@ -47,7 +47,7 @@ namespace Account_Management
                     DialogResult Result =  MessageBox.Show(this, "User successfully added.","Success",MessageBoxButtons.OK);
                     if (Result == DialogResult.OK)
                     {
-                        UserNames.Items.Add(txtLastName.Text + ", " + txtFirstName.Text);
+                        UserNames.Items.Add(txtUserName.Text);
                         this.Close();
                     }
                 }

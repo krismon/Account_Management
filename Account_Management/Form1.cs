@@ -652,7 +652,18 @@ namespace Account_Management
             {
                 WhereClause += "AND date(REC.DUE_DATE) <= date('" + pkrInvoiceDueTo.Value.ToString("yyyy-MM-dd") + "')";
             }
-
+            if (chkUnpaidInvoice.Checked && chkPartiallyPaid.Checked)
+            {
+                WhereClause += "AND (REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.FULLY_PAID + "' OR REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.PARTIALLY_PAID + "')";
+            }
+            else if (chkPartiallyPaid.Checked)
+            {
+                WhereClause += "AND REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.PARTIALLY_PAID + "'";
+            }
+            else if (chkUnpaidInvoice.Checked)
+            {
+                WhereClause += "AND REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.FULLY_PAID + "'";
+            }
             if (WhereClause.Length > 0)
             {
                 WhereClause = "WHERE " + WhereClause.Substring(3);
@@ -797,7 +808,7 @@ namespace Account_Management
             Columns += chkCustomerName.Checked ? "CUS.NAME AS CUSTOMER_NAME," : "";
 
             Columns += chkBranch.Checked ? "PER.BRANCH," : "";
-            Columns += chkAmount.Checked ? "REC.AMOUNT," : "";
+            Columns += chkAmount.Checked ? "PRO.UNIT_PRICE * TRA.QUANTITY AS AMOUNT," : "";
 
             Columns += chkItem.Checked ? "PRO.PRODUCT_CODE," : "";
             Columns += chkReceivableStatus.Checked ? "CAST(REC.RECEIVABLE_STATUS AS TEXT) AS STATUS," : "";
@@ -881,6 +892,7 @@ namespace Account_Management
             chkDueFrom.Checked = false;
             chkEntryTo.Checked = false;
             chkDueTo.Checked = false;
+            chkUnpaidInvoice.Checked = false;
 
             pkrSearchInvoiceFrom.Value = DateTime.Now.Date;
             pkrSearchInvoiceTo.Value = DateTime.Now.Date;
