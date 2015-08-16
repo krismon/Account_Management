@@ -662,7 +662,7 @@ namespace Account_Management
             }
             else if (chkUnpaidInvoice.Checked)
             {
-                WhereClause += "AND REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.FULLY_PAID + "'";
+                WhereClause += "AND REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.UNPAID + "'";
             }
             if (WhereClause.Length > 0)
             {
@@ -788,10 +788,13 @@ namespace Account_Management
             chkAmount.Checked = false;
 
             chkItem.Checked = false;
-            chkReceivableStatus.Checked = false;
+            //chkReceivableStatus.Checked = false;
 
             chkDueDate.Checked = false;
             chkPaymentTerms.Checked = false;
+
+            chkUnpaidReports.Checked = false;
+            chkPartiallyPaidReportsOnly.Checked = false;
 
             txtReportBranch.Text = "";
             txtReportSalesRep.Text = "";
@@ -811,7 +814,8 @@ namespace Account_Management
             Columns += chkAmount.Checked ? "PRO.UNIT_PRICE * TRA.QUANTITY AS AMOUNT," : "";
 
             Columns += chkItem.Checked ? "PRO.PRODUCT_CODE," : "";
-            Columns += chkReceivableStatus.Checked ? "CAST(REC.RECEIVABLE_STATUS AS TEXT) AS STATUS," : "";
+            //Columns += chkReceivableStatus.Checked ? "CAST(REC.RECEIVABLE_STATUS AS TEXT) AS STATUS," : "";
+            Columns += "CAST(REC.RECEIVABLE_STATUS AS TEXT) AS STATUS,";
 
             Columns += chkDueDate.Checked ? "REC.DUE_DATE," : "";
             Columns += chkPaymentTerms.Checked ? "REC.PAYMENT_TERMS," : "";
@@ -852,6 +856,22 @@ namespace Account_Management
                     WhereClause += " AND";
                 }
                 WhereClause += " date(REC.DUE_DATE) = date('" + pkrReportDueDate.Value.ToString("yyyy-MM-dd") + "')";
+            }
+            if (chkUnpaidReports.Checked)
+            {
+                if (WhereClause.Length > 0)
+                {
+                    WhereClause += " AND";
+                }
+                WhereClause += " REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.UNPAID + "'";
+            }
+            else if (chkPartiallyPaidReportsOnly.Checked)
+            {
+                if (WhereClause.Length > 0)
+                {
+                    WhereClause += " AND";
+                }
+                WhereClause += " REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.PARTIALLY_PAID + "'";
             }
             if (WhereClause.Length > 0)
             {
@@ -949,6 +969,22 @@ namespace Account_Management
         private void PrintSearchInvoice_Click(object sender, EventArgs e)
         {
             PrintTable(dgvSearchInvoice, Constants.PDFOutputFolderSearch + DateTime.Now.ToString("MMMddyyyyhhmmss"));
+        }
+
+        private void chkUnpaidReports_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (chkUnpaidReports.Checked)
+            {
+                chkPartiallyPaidReportsOnly.Checked = false;
+            }
+        }
+
+        private void chkPartiallyPaidReportsOnly_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (chkPartiallyPaidReportsOnly.Checked)
+            {
+                chkUnpaidReports.Checked = false;
+            }
         }
         
 

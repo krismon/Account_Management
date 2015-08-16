@@ -140,6 +140,8 @@
             this.ddlUserList = new System.Windows.Forms.ComboBox();
             this.chkUnpaidInvoice = new System.Windows.Forms.CheckBox();
             this.chkPartiallyPaid = new System.Windows.Forms.CheckBox();
+            this.chkUnpaidReports = new System.Windows.Forms.CheckBox();
+            this.chkPartiallyPaidReportsOnly = new System.Windows.Forms.CheckBox();
             this.tabReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportTable)).BeginInit();
             this.Add_Rec.SuspendLayout();
@@ -234,6 +236,8 @@
             // 
             // tabReports
             // 
+            this.tabReports.Controls.Add(this.chkPartiallyPaidReportsOnly);
+            this.tabReports.Controls.Add(this.chkUnpaidReports);
             this.tabReports.Controls.Add(this.PrintReportsPDF);
             this.tabReports.Controls.Add(this.chkDueDatePkr);
             this.tabReports.Controls.Add(this.chkInvoiceDatePkr);
@@ -320,6 +324,7 @@
             // chkReceivableStatus
             // 
             this.chkReceivableStatus.AutoSize = true;
+            this.chkReceivableStatus.Enabled = false;
             this.chkReceivableStatus.Location = new System.Drawing.Point(328, 117);
             this.chkReceivableStatus.Margin = new System.Windows.Forms.Padding(2);
             this.chkReceivableStatus.Name = "chkReceivableStatus";
@@ -446,6 +451,9 @@
             // 
             this.dgvReportTable.AllowUserToAddRows = false;
             this.dgvReportTable.AllowUserToDeleteRows = false;
+            this.dgvReportTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvReportTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvReportTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReportTable.Location = new System.Drawing.Point(12, 185);
@@ -571,6 +579,7 @@
             // 
             // label27
             // 
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.Maroon;
@@ -621,6 +630,8 @@
             // 
             // txtInvoiceTotal
             // 
+            this.txtInvoiceTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtInvoiceTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInvoiceTotal.Location = new System.Drawing.Point(116, 444);
             this.txtInvoiceTotal.Margin = new System.Windows.Forms.Padding(2);
@@ -631,6 +642,8 @@
             // 
             // label22
             // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(10, 445);
@@ -709,6 +722,7 @@
             // 
             // Label9
             // 
+            this.Label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Label9.AutoSize = true;
             this.Label9.Location = new System.Drawing.Point(13, 490);
             this.Label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -719,6 +733,7 @@
             // 
             // Button3
             // 
+            this.Button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Button3.Location = new System.Drawing.Point(436, 569);
             this.Button3.Margin = new System.Windows.Forms.Padding(2);
             this.Button3.Name = "Button3";
@@ -729,6 +744,7 @@
             // 
             // ResetAddInvoice
             // 
+            this.ResetAddInvoice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ResetAddInvoice.Location = new System.Drawing.Point(244, 569);
             this.ResetAddInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.ResetAddInvoice.Name = "ResetAddInvoice";
@@ -740,6 +756,7 @@
             // 
             // Add
             // 
+            this.Add.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Add.Location = new System.Drawing.Point(340, 569);
             this.Add.Margin = new System.Windows.Forms.Padding(2);
             this.Add.Name = "Add";
@@ -751,6 +768,8 @@
             // 
             // txtRemarks
             // 
+            this.txtRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRemarks.Location = new System.Drawing.Point(15, 505);
             this.txtRemarks.Margin = new System.Windows.Forms.Padding(2);
             this.txtRemarks.Name = "txtRemarks";
@@ -787,6 +806,9 @@
             // InvoiceItems
             // 
             this.InvoiceItems.AllowUserToAddRows = false;
+            this.InvoiceItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.InvoiceItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.InvoiceItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RemoveRow,
@@ -1054,6 +1076,9 @@
             // 
             this.dgvSearchInvoice.AllowUserToAddRows = false;
             this.dgvSearchInvoice.AllowUserToDeleteRows = false;
+            this.dgvSearchInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSearchInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSearchInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearchInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1424,6 +1449,30 @@
             this.chkPartiallyPaid.Text = "Partially Paid";
             this.chkPartiallyPaid.UseVisualStyleBackColor = true;
             // 
+            // chkUnpaidReports
+            // 
+            this.chkUnpaidReports.AutoSize = true;
+            this.chkUnpaidReports.Location = new System.Drawing.Point(587, 95);
+            this.chkUnpaidReports.Margin = new System.Windows.Forms.Padding(2);
+            this.chkUnpaidReports.Name = "chkUnpaidReports";
+            this.chkUnpaidReports.Size = new System.Drawing.Size(124, 17);
+            this.chkUnpaidReports.TabIndex = 92;
+            this.chkUnpaidReports.Text = "Unpaid Reports Only";
+            this.chkUnpaidReports.UseVisualStyleBackColor = true;
+            this.chkUnpaidReports.CheckStateChanged += new System.EventHandler(this.chkUnpaidReports_CheckStateChanged);
+            // 
+            // chkPartiallyPaidReportsOnly
+            // 
+            this.chkPartiallyPaidReportsOnly.AutoSize = true;
+            this.chkPartiallyPaidReportsOnly.Location = new System.Drawing.Point(587, 117);
+            this.chkPartiallyPaidReportsOnly.Margin = new System.Windows.Forms.Padding(2);
+            this.chkPartiallyPaidReportsOnly.Name = "chkPartiallyPaidReportsOnly";
+            this.chkPartiallyPaidReportsOnly.Size = new System.Drawing.Size(153, 17);
+            this.chkPartiallyPaidReportsOnly.TabIndex = 93;
+            this.chkPartiallyPaidReportsOnly.Text = "Partially Paid Reports  Only";
+            this.chkPartiallyPaidReportsOnly.UseVisualStyleBackColor = true;
+            this.chkPartiallyPaidReportsOnly.CheckStateChanged += new System.EventHandler(this.chkPartiallyPaidReportsOnly_CheckStateChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1574,6 +1623,8 @@
         private System.Windows.Forms.Button PrintSearchInvoice;
         private System.Windows.Forms.CheckBox chkUnpaidInvoice;
         private System.Windows.Forms.CheckBox chkPartiallyPaid;
+        internal System.Windows.Forms.CheckBox chkUnpaidReports;
+        internal System.Windows.Forms.CheckBox chkPartiallyPaidReportsOnly;
     }
 }
 
