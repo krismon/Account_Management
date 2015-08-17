@@ -800,107 +800,159 @@ namespace Account_Management
             txtReportSalesRep.Text = "";
         }
 
+        private int SelectedColumnsForReports()
+        {
+            int SelectedColumns = 0;
+            if (chkInvoiceNumber.Checked)
+            {
+                SelectedColumns++;
+            }
+            if (chkCustomerName.Checked)
+            {
+                SelectedColumns++;
+            }
+            if (chkBranch.Checked)
+            {
+                SelectedColumns++;
+            }
+            if (chkAmount.Checked)
+            {
+                SelectedColumns++;
+            }
+            if (chkItem.Checked)
+            {
+                SelectedColumns++;
+            }
+            if (chkDueDate.Checked)
+            {
+                SelectedColumns++;
+            }
+            if (chkPaymentTerms.Checked)
+            {
+                SelectedColumns++;
+            }
+            if (chkPaidReports.Checked)
+            {
+                SelectedColumns++;
+            }
+            if (chkUnpaidReports.Checked)
+            {
+                SelectedColumns++;
+            }
+            if (chkPartiallyPaidReportsOnly.Checked)
+            {
+                SelectedColumns++;
+            }
+            return SelectedColumns;
+        }
+
         private void btnSearchReport_Click(object sender, EventArgs e)
         {
-            string preQuery = "SELECT ";
-            string Columns = "";
-            string sufQuery = " FROM RECEIVABLES REC ";
-            string Joins = "";
-            string WhereClause = "";
-            Columns += chkInvoiceNumber.Checked ? "REC.INVOICE_NO," : "";
-            Columns += chkCustomerName.Checked ? "CUS.NAME AS CUSTOMER_NAME," : "";
+            if (SelectedColumnsForReports() <= 0)
+            {
+                MessageBox.Show("Please select atleast one Report Detail.");
+            }
+            else
+            {
+                string preQuery = "SELECT ";
+                string Columns = "";
+                string sufQuery = " FROM RECEIVABLES REC ";
+                string Joins = "";
+                string WhereClause = "";
+                Columns += chkInvoiceNumber.Checked ? "REC.INVOICE_NO," : "";
+                Columns += chkCustomerName.Checked ? "CUS.NAME AS CUSTOMER_NAME," : "";
 
-            Columns += chkBranch.Checked ? "PER.BRANCH," : "";
-            Columns += chkAmount.Checked ? "PRO.UNIT_PRICE * TRA.QUANTITY AS AMOUNT," : "";
+                Columns += chkBranch.Checked ? "PER.BRANCH," : "";
+                Columns += chkAmount.Checked ? "PRO.UNIT_PRICE * TRA.QUANTITY AS AMOUNT," : "";
 
-            Columns += chkItem.Checked ? "PRO.PRODUCT_CODE," : "";
-            //Columns += chkReceivableStatus.Checked ? "CAST(REC.RECEIVABLE_STATUS AS TEXT) AS STATUS," : "";
-            Columns += "CAST(REC.RECEIVABLE_STATUS AS TEXT) AS STATUS,";
+                Columns += chkItem.Checked ? "PRO.PRODUCT_CODE," : "";
+                //Columns += chkReceivableStatus.Checked ? "CAST(REC.RECEIVABLE_STATUS AS TEXT) AS STATUS," : "";
+                
 
-            Columns += chkDueDate.Checked ? "REC.DUE_DATE," : "";
-            Columns += chkPaymentTerms.Checked ? "REC.PAYMENT_TERMS," : "";
+                Columns += chkDueDate.Checked ? "REC.DUE_DATE," : "";
+                Columns += chkPaymentTerms.Checked ? "REC.PAYMENT_TERMS," : "";
+                Columns += "CAST(REC.RECEIVABLE_STATUS AS TEXT) AS STATUS,";
 
                 Joins += "LEFT JOIN " + Constants.TableNames.CUSTOMER + " CUS ON CUS.CUSTOMER_ID = REC.CUSTOMER_ID ";
                 Joins += "LEFT JOIN " + Constants.TableNames.PERSONNEL + " PER ON PER.PERSONNEL_ID = REC.PERSONNEL_ID ";
-                
+
                 if (Columns.Contains("PRO."))
                 {
                     Joins += "LEFT JOIN " + Constants.TableNames.TRANSACTIONS + " TRA ON TRA.INVOICE_ID = REC.INVOICE_ID ";
                     Joins += "LEFT JOIN " + Constants.TableNames.PRODUCT + " PRO ON PRO.PRODUCT_ID = TRA.PRODUCT_ID ";
                 }
-                
 
-            if(txtReportBranch.Text.Length > 0)
-            {
-                WhereClause += "PER.BRANCH = '" + txtReportBranch.Text + "'";
-            }
-            if(txtReportSalesRep.Text.Length > 0)
-            {
-                if(WhereClause.Length > 0){
-                    WhereClause += " AND";
-                }
-                WhereClause += " PER.NAME like '%" + txtReportSalesRep.Text + "%'";
-            }
-            if (chkInvoiceDatePkr.Checked)
-            {
-                if (WhereClause.Length > 0)
-                {
-                    WhereClause += " AND";
-                }
-                WhereClause += " REC.INVOICE_DATE = date('" + pkrReportInvoiceDate.Value.ToString("yyyy-MM-dd") + "')";
-            }
-            if (chkDueDatePkr.Checked)
-            {
-                if (WhereClause.Length > 0)
-                {
-                    WhereClause += " AND";
-                }
-                WhereClause += " date(REC.DUE_DATE) = date('" + pkrReportDueDate.Value.ToString("yyyy-MM-dd") + "')";
-            }
-            if (chkUnpaidReports.Checked)
-            {
-                if (WhereClause.Length > 0)
-                {
-                    WhereClause += " AND";
-                }
-                WhereClause += " REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.UNPAID + "'";
-            }
-            else if (chkPartiallyPaidReportsOnly.Checked)
-            {
-                if (WhereClause.Length > 0)
-                {
-                    WhereClause += " AND";
-                }
-                WhereClause += " REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.PARTIALLY_PAID + "'";
-            }
-            if (WhereClause.Length > 0)
-            {
-                WhereClause = WhereClause.Insert(0, "WHERE ");
-            }
 
-            if (Columns.Length > 0)
-            {
-                Columns = Columns.Substring(0, Columns.Length - 1);
-                AccountsRecievableDao DAO = new AccountsRecievableDao();
-                DataTable dt = DAO.SelectQuery(preQuery + Columns + sufQuery + Joins + WhereClause);
-
-                if (dt.Columns.Contains("STATUS"))
+                if (txtReportBranch.Text.Length > 0)
                 {
-                    foreach (DataRow row in dt.Rows)
+                    WhereClause += "PER.BRANCH = '" + txtReportBranch.Text + "'";
+                }
+                if (txtReportSalesRep.Text.Length > 0)
+                {
+                    if (WhereClause.Length > 0)
                     {
-                        row[row.Table.Columns["STATUS"].Ordinal] = GetRecievableStatusDisplay(row[row.Table.Columns["STATUS"].Ordinal].ToString());
+                        WhereClause += " AND";
                     }
+                    WhereClause += " PER.NAME like '%" + txtReportSalesRep.Text + "%'";
                 }
-                    
-                dgvReportTable.DataSource = dt;
-            }
-            else
-            {
-                MessageBox.Show("Please select a column to populate the report.");
-            }
-            
-            
+                if (chkInvoiceDatePkr.Checked)
+                {
+                    if (WhereClause.Length > 0)
+                    {
+                        WhereClause += " AND";
+                    }
+                    WhereClause += " REC.INVOICE_DATE = date('" + pkrReportInvoiceDate.Value.ToString("yyyy-MM-dd") + "')";
+                }
+                if (chkDueDatePkr.Checked)
+                {
+                    if (WhereClause.Length > 0)
+                    {
+                        WhereClause += " AND";
+                    }
+                    WhereClause += " date(REC.DUE_DATE) = date('" + pkrReportDueDate.Value.ToString("yyyy-MM-dd") + "')";
+                }
+                if (chkUnpaidReports.Checked)
+                {
+                    if (WhereClause.Length > 0)
+                    {
+                        WhereClause += " AND";
+                    }
+                    WhereClause += " REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.UNPAID + "'";
+                }
+                else if (chkPartiallyPaidReportsOnly.Checked)
+                {
+                    if (WhereClause.Length > 0)
+                    {
+                        WhereClause += " AND";
+                    }
+                    WhereClause += " REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.PARTIALLY_PAID + "'";
+                }
+                if (WhereClause.Length > 0)
+                {
+                    WhereClause = WhereClause.Insert(0, "WHERE ");
+                }
 
+                if (Columns.Length > 0)
+                {
+                    Columns = Columns.Substring(0, Columns.Length - 1);
+                    AccountsRecievableDao DAO = new AccountsRecievableDao();
+                    DataTable dt = DAO.SelectQuery(preQuery + Columns + sufQuery + Joins + WhereClause);
+
+                    if (dt.Columns.Contains("STATUS"))
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            row[row.Table.Columns["STATUS"].Ordinal] = GetRecievableStatusDisplay(row[row.Table.Columns["STATUS"].Ordinal].ToString());
+                        }
+                    }
+
+                    dgvReportTable.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Please select a column to populate the report.");
+                }
+            }
         }
 
         public void ClearSearchInvoiceFields()
@@ -976,6 +1028,7 @@ namespace Account_Management
             if (chkUnpaidReports.Checked)
             {
                 chkPartiallyPaidReportsOnly.Checked = false;
+                chkPaidReports.Checked = false;
             }
         }
 
@@ -984,6 +1037,16 @@ namespace Account_Management
             if (chkPartiallyPaidReportsOnly.Checked)
             {
                 chkUnpaidReports.Checked = false;
+                chkPaidReports.Checked = false;
+            }
+        }
+
+        private void chkPaidReports_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkPaidReports.Checked)
+            {
+                chkUnpaidReports.Checked = false;
+                chkPartiallyPaidReportsOnly.Checked = false;
             }
         }
         

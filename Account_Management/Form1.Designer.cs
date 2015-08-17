@@ -142,6 +142,7 @@
             this.chkPartiallyPaid = new System.Windows.Forms.CheckBox();
             this.chkUnpaidReports = new System.Windows.Forms.CheckBox();
             this.chkPartiallyPaidReportsOnly = new System.Windows.Forms.CheckBox();
+            this.chkPaidReports = new System.Windows.Forms.CheckBox();
             this.tabReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportTable)).BeginInit();
             this.Add_Rec.SuspendLayout();
@@ -162,7 +163,7 @@
             // chkPaymentTerms
             // 
             this.chkPaymentTerms.AutoSize = true;
-            this.chkPaymentTerms.Location = new System.Drawing.Point(481, 117);
+            this.chkPaymentTerms.Location = new System.Drawing.Point(328, 95);
             this.chkPaymentTerms.Margin = new System.Windows.Forms.Padding(2);
             this.chkPaymentTerms.Name = "chkPaymentTerms";
             this.chkPaymentTerms.Size = new System.Drawing.Size(99, 17);
@@ -236,6 +237,7 @@
             // 
             // tabReports
             // 
+            this.tabReports.Controls.Add(this.chkPaidReports);
             this.tabReports.Controls.Add(this.chkPartiallyPaidReportsOnly);
             this.tabReports.Controls.Add(this.chkUnpaidReports);
             this.tabReports.Controls.Add(this.PrintReportsPDF);
@@ -272,7 +274,7 @@
             // 
             // PrintReportsPDF
             // 
-            this.PrintReportsPDF.Location = new System.Drawing.Point(711, 151);
+            this.PrintReportsPDF.Location = new System.Drawing.Point(711, 179);
             this.PrintReportsPDF.Name = "PrintReportsPDF";
             this.PrintReportsPDF.Size = new System.Drawing.Size(75, 30);
             this.PrintReportsPDF.TabIndex = 91;
@@ -313,7 +315,7 @@
             // chkDueDate
             // 
             this.chkDueDate.AutoSize = true;
-            this.chkDueDate.Location = new System.Drawing.Point(481, 95);
+            this.chkDueDate.Location = new System.Drawing.Point(206, 138);
             this.chkDueDate.Margin = new System.Windows.Forms.Padding(2);
             this.chkDueDate.Name = "chkDueDate";
             this.chkDueDate.Size = new System.Drawing.Size(72, 17);
@@ -324,6 +326,8 @@
             // chkReceivableStatus
             // 
             this.chkReceivableStatus.AutoSize = true;
+            this.chkReceivableStatus.Checked = true;
+            this.chkReceivableStatus.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkReceivableStatus.Enabled = false;
             this.chkReceivableStatus.Location = new System.Drawing.Point(328, 117);
             this.chkReceivableStatus.Margin = new System.Windows.Forms.Padding(2);
@@ -336,7 +340,7 @@
             // chkItem
             // 
             this.chkItem.AutoSize = true;
-            this.chkItem.Location = new System.Drawing.Point(328, 95);
+            this.chkItem.Location = new System.Drawing.Point(206, 117);
             this.chkItem.Margin = new System.Windows.Forms.Padding(2);
             this.chkItem.Name = "chkItem";
             this.chkItem.Size = new System.Drawing.Size(46, 17);
@@ -347,7 +351,7 @@
             // chkAmount
             // 
             this.chkAmount.AutoSize = true;
-            this.chkAmount.Location = new System.Drawing.Point(208, 117);
+            this.chkAmount.Location = new System.Drawing.Point(206, 95);
             this.chkAmount.Margin = new System.Windows.Forms.Padding(2);
             this.chkAmount.Name = "chkAmount";
             this.chkAmount.Size = new System.Drawing.Size(62, 17);
@@ -358,7 +362,7 @@
             // chkBranch
             // 
             this.chkBranch.AutoSize = true;
-            this.chkBranch.Location = new System.Drawing.Point(208, 95);
+            this.chkBranch.Location = new System.Drawing.Point(67, 138);
             this.chkBranch.Margin = new System.Windows.Forms.Padding(2);
             this.chkBranch.Name = "chkBranch";
             this.chkBranch.Size = new System.Drawing.Size(60, 17);
@@ -411,7 +415,7 @@
             // 
             // btnResetReports
             // 
-            this.btnResetReports.Location = new System.Drawing.Point(273, 149);
+            this.btnResetReports.Location = new System.Drawing.Point(327, 177);
             this.btnResetReports.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetReports.Name = "btnResetReports";
             this.btnResetReports.Size = new System.Drawing.Size(66, 32);
@@ -422,7 +426,7 @@
             // 
             // btnSearchReport
             // 
-            this.btnSearchReport.Location = new System.Drawing.Point(360, 149);
+            this.btnSearchReport.Location = new System.Drawing.Point(414, 177);
             this.btnSearchReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchReport.Name = "btnSearchReport";
             this.btnSearchReport.Size = new System.Drawing.Size(66, 32);
@@ -456,13 +460,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvReportTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvReportTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReportTable.Location = new System.Drawing.Point(12, 185);
+            this.dgvReportTable.Location = new System.Drawing.Point(12, 214);
             this.dgvReportTable.Margin = new System.Windows.Forms.Padding(2);
             this.dgvReportTable.Name = "dgvReportTable";
             this.dgvReportTable.ReadOnly = true;
             this.dgvReportTable.RowHeadersVisible = false;
             this.dgvReportTable.RowTemplate.Height = 24;
-            this.dgvReportTable.Size = new System.Drawing.Size(775, 398);
+            this.dgvReportTable.Size = new System.Drawing.Size(775, 369);
             this.dgvReportTable.TabIndex = 70;
             // 
             // pkrReportDueDate
@@ -1452,26 +1456,38 @@
             // chkUnpaidReports
             // 
             this.chkUnpaidReports.AutoSize = true;
-            this.chkUnpaidReports.Location = new System.Drawing.Point(587, 95);
+            this.chkUnpaidReports.Location = new System.Drawing.Point(470, 116);
             this.chkUnpaidReports.Margin = new System.Windows.Forms.Padding(2);
             this.chkUnpaidReports.Name = "chkUnpaidReports";
-            this.chkUnpaidReports.Size = new System.Drawing.Size(124, 17);
+            this.chkUnpaidReports.Size = new System.Drawing.Size(93, 17);
             this.chkUnpaidReports.TabIndex = 92;
-            this.chkUnpaidReports.Text = "Unpaid Reports Only";
+            this.chkUnpaidReports.Text = "Unpaid Status";
             this.chkUnpaidReports.UseVisualStyleBackColor = true;
             this.chkUnpaidReports.CheckStateChanged += new System.EventHandler(this.chkUnpaidReports_CheckStateChanged);
             // 
             // chkPartiallyPaidReportsOnly
             // 
             this.chkPartiallyPaidReportsOnly.AutoSize = true;
-            this.chkPartiallyPaidReportsOnly.Location = new System.Drawing.Point(587, 117);
+            this.chkPartiallyPaidReportsOnly.Location = new System.Drawing.Point(470, 138);
             this.chkPartiallyPaidReportsOnly.Margin = new System.Windows.Forms.Padding(2);
             this.chkPartiallyPaidReportsOnly.Name = "chkPartiallyPaidReportsOnly";
-            this.chkPartiallyPaidReportsOnly.Size = new System.Drawing.Size(153, 17);
+            this.chkPartiallyPaidReportsOnly.Size = new System.Drawing.Size(119, 17);
             this.chkPartiallyPaidReportsOnly.TabIndex = 93;
-            this.chkPartiallyPaidReportsOnly.Text = "Partially Paid Reports  Only";
+            this.chkPartiallyPaidReportsOnly.Text = "Partially Paid Status";
             this.chkPartiallyPaidReportsOnly.UseVisualStyleBackColor = true;
             this.chkPartiallyPaidReportsOnly.CheckStateChanged += new System.EventHandler(this.chkPartiallyPaidReportsOnly_CheckStateChanged);
+            // 
+            // chkPaidReports
+            // 
+            this.chkPaidReports.AutoSize = true;
+            this.chkPaidReports.Location = new System.Drawing.Point(470, 95);
+            this.chkPaidReports.Margin = new System.Windows.Forms.Padding(2);
+            this.chkPaidReports.Name = "chkPaidReports";
+            this.chkPaidReports.Size = new System.Drawing.Size(80, 17);
+            this.chkPaidReports.TabIndex = 94;
+            this.chkPaidReports.Text = "Paid Status";
+            this.chkPaidReports.UseVisualStyleBackColor = true;
+            this.chkPaidReports.CheckedChanged += new System.EventHandler(this.chkPaidReports_CheckedChanged);
             // 
             // Form1
             // 
@@ -1625,6 +1641,7 @@
         private System.Windows.Forms.CheckBox chkPartiallyPaid;
         internal System.Windows.Forms.CheckBox chkUnpaidReports;
         internal System.Windows.Forms.CheckBox chkPartiallyPaidReportsOnly;
+        internal System.Windows.Forms.CheckBox chkPaidReports;
     }
 }
 
