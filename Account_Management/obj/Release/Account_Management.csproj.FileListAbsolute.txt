@@ -21,3 +21,26 @@ C:\Visual Studio\Account_Management\Account_Management\obj\Release\Account_Manag
 C:\Visual Studio\Account_Management\Account_Management\obj\Release\Account_Management.application
 C:\Visual Studio\Account_Management\Account_Management\obj\Release\Account_Management.exe
 C:\Visual Studio\Account_Management\Account_Management\obj\Release\Account_Management.pdb
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\Account_Management.exe.config
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Release\Account_Management.exe
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Release\Account_Management.pdb
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\Account_Management.exe.manifest
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\Account_Management.application
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\Account_Management.exe
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\Account_Management.pdb
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\EntityFramework.dll
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\System.Data.SQLite.dll
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\System.Data.SQLite.EF6.dll
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\System.Data.SQLite.Linq.dll
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\EntityFramework.xml
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Release\System.Data.SQLite.xml
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Release\Account_Management.AddItem.resources
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Release\Account_Management.Form1.resources
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Release\Account_Management.Properties.Resources.resources
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Release\Account_Management.UserManagement.resources
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Release\Account_Management.ViewEditInvoiceItem.resources
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Release\Account_Management.csproj.GenerateResource.Cache
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Release\Account_Management.exe.manifest
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Release\Account_Management.application

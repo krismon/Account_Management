@@ -36,6 +36,9 @@
             this.Label7 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
             this.tabReports = new System.Windows.Forms.TabPage();
+            this.chkPaidReports = new System.Windows.Forms.CheckBox();
+            this.chkPartiallyPaidReportsOnly = new System.Windows.Forms.CheckBox();
+            this.chkUnpaidReports = new System.Windows.Forms.CheckBox();
             this.PrintReportsPDF = new System.Windows.Forms.Button();
             this.chkDueDatePkr = new System.Windows.Forms.CheckBox();
             this.chkInvoiceDatePkr = new System.Windows.Forms.CheckBox();
@@ -95,6 +98,8 @@
             this.Label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
             this.tabSearchInvoice = new System.Windows.Forms.TabPage();
+            this.chkPartiallyPaid = new System.Windows.Forms.CheckBox();
+            this.chkUnpaidInvoice = new System.Windows.Forms.CheckBox();
             this.PrintSearchInvoice = new System.Windows.Forms.Button();
             this.chkDueToday = new System.Windows.Forms.CheckBox();
             this.chkDueTo = new System.Windows.Forms.CheckBox();
@@ -138,11 +143,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.ddlUserList = new System.Windows.Forms.ComboBox();
-            this.chkUnpaidInvoice = new System.Windows.Forms.CheckBox();
-            this.chkPartiallyPaid = new System.Windows.Forms.CheckBox();
-            this.chkUnpaidReports = new System.Windows.Forms.CheckBox();
-            this.chkPartiallyPaidReportsOnly = new System.Windows.Forms.CheckBox();
-            this.chkPaidReports = new System.Windows.Forms.CheckBox();
             this.tabReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportTable)).BeginInit();
             this.Add_Rec.SuspendLayout();
@@ -272,6 +272,42 @@
             this.tabReports.Text = "Reports";
             this.tabReports.UseVisualStyleBackColor = true;
             // 
+            // chkPaidReports
+            // 
+            this.chkPaidReports.AutoSize = true;
+            this.chkPaidReports.Location = new System.Drawing.Point(470, 95);
+            this.chkPaidReports.Margin = new System.Windows.Forms.Padding(2);
+            this.chkPaidReports.Name = "chkPaidReports";
+            this.chkPaidReports.Size = new System.Drawing.Size(80, 17);
+            this.chkPaidReports.TabIndex = 94;
+            this.chkPaidReports.Text = "Paid Status";
+            this.chkPaidReports.UseVisualStyleBackColor = true;
+            this.chkPaidReports.CheckedChanged += new System.EventHandler(this.chkPaidReports_CheckedChanged);
+            // 
+            // chkPartiallyPaidReportsOnly
+            // 
+            this.chkPartiallyPaidReportsOnly.AutoSize = true;
+            this.chkPartiallyPaidReportsOnly.Location = new System.Drawing.Point(470, 138);
+            this.chkPartiallyPaidReportsOnly.Margin = new System.Windows.Forms.Padding(2);
+            this.chkPartiallyPaidReportsOnly.Name = "chkPartiallyPaidReportsOnly";
+            this.chkPartiallyPaidReportsOnly.Size = new System.Drawing.Size(119, 17);
+            this.chkPartiallyPaidReportsOnly.TabIndex = 93;
+            this.chkPartiallyPaidReportsOnly.Text = "Partially Paid Status";
+            this.chkPartiallyPaidReportsOnly.UseVisualStyleBackColor = true;
+            this.chkPartiallyPaidReportsOnly.CheckStateChanged += new System.EventHandler(this.chkPartiallyPaidReportsOnly_CheckStateChanged);
+            // 
+            // chkUnpaidReports
+            // 
+            this.chkUnpaidReports.AutoSize = true;
+            this.chkUnpaidReports.Location = new System.Drawing.Point(470, 116);
+            this.chkUnpaidReports.Margin = new System.Windows.Forms.Padding(2);
+            this.chkUnpaidReports.Name = "chkUnpaidReports";
+            this.chkUnpaidReports.Size = new System.Drawing.Size(93, 17);
+            this.chkUnpaidReports.TabIndex = 92;
+            this.chkUnpaidReports.Text = "Unpaid Status";
+            this.chkUnpaidReports.UseVisualStyleBackColor = true;
+            this.chkUnpaidReports.CheckStateChanged += new System.EventHandler(this.chkUnpaidReports_CheckStateChanged);
+            // 
             // PrintReportsPDF
             // 
             this.PrintReportsPDF.Location = new System.Drawing.Point(711, 179);
@@ -295,6 +331,7 @@
             // chkInvoiceDatePkr
             // 
             this.chkInvoiceDatePkr.AutoSize = true;
+            this.chkInvoiceDatePkr.Cursor = System.Windows.Forms.Cursors.Default;
             this.chkInvoiceDatePkr.Location = new System.Drawing.Point(345, 22);
             this.chkInvoiceDatePkr.Name = "chkInvoiceDatePkr";
             this.chkInvoiceDatePkr.Size = new System.Drawing.Size(15, 14);
@@ -963,6 +1000,26 @@
             this.tabSearchInvoice.Text = "Search Invoice";
             this.tabSearchInvoice.UseVisualStyleBackColor = true;
             // 
+            // chkPartiallyPaid
+            // 
+            this.chkPartiallyPaid.AutoSize = true;
+            this.chkPartiallyPaid.Location = new System.Drawing.Point(167, 140);
+            this.chkPartiallyPaid.Name = "chkPartiallyPaid";
+            this.chkPartiallyPaid.Size = new System.Drawing.Size(86, 17);
+            this.chkPartiallyPaid.TabIndex = 79;
+            this.chkPartiallyPaid.Text = "Partially Paid";
+            this.chkPartiallyPaid.UseVisualStyleBackColor = true;
+            // 
+            // chkUnpaidInvoice
+            // 
+            this.chkUnpaidInvoice.AutoSize = true;
+            this.chkUnpaidInvoice.Location = new System.Drawing.Point(101, 140);
+            this.chkUnpaidInvoice.Name = "chkUnpaidInvoice";
+            this.chkUnpaidInvoice.Size = new System.Drawing.Size(60, 17);
+            this.chkUnpaidInvoice.TabIndex = 78;
+            this.chkUnpaidInvoice.Text = "Unpaid";
+            this.chkUnpaidInvoice.UseVisualStyleBackColor = true;
+            // 
             // PrintSearchInvoice
             // 
             this.PrintSearchInvoice.Location = new System.Drawing.Point(701, 118);
@@ -1432,62 +1489,6 @@
             this.ddlUserList.TabIndex = 34;
             this.ddlUserList.SelectedIndexChanged += new System.EventHandler(this.ddlUserList_SelectedIndexChanged);
             this.ddlUserList.TextChanged += new System.EventHandler(this.ddlUserList_TextChanged);
-            // 
-            // chkUnpaidInvoice
-            // 
-            this.chkUnpaidInvoice.AutoSize = true;
-            this.chkUnpaidInvoice.Location = new System.Drawing.Point(101, 140);
-            this.chkUnpaidInvoice.Name = "chkUnpaidInvoice";
-            this.chkUnpaidInvoice.Size = new System.Drawing.Size(60, 17);
-            this.chkUnpaidInvoice.TabIndex = 78;
-            this.chkUnpaidInvoice.Text = "Unpaid";
-            this.chkUnpaidInvoice.UseVisualStyleBackColor = true;
-            // 
-            // chkPartiallyPaid
-            // 
-            this.chkPartiallyPaid.AutoSize = true;
-            this.chkPartiallyPaid.Location = new System.Drawing.Point(167, 140);
-            this.chkPartiallyPaid.Name = "chkPartiallyPaid";
-            this.chkPartiallyPaid.Size = new System.Drawing.Size(86, 17);
-            this.chkPartiallyPaid.TabIndex = 79;
-            this.chkPartiallyPaid.Text = "Partially Paid";
-            this.chkPartiallyPaid.UseVisualStyleBackColor = true;
-            // 
-            // chkUnpaidReports
-            // 
-            this.chkUnpaidReports.AutoSize = true;
-            this.chkUnpaidReports.Location = new System.Drawing.Point(470, 116);
-            this.chkUnpaidReports.Margin = new System.Windows.Forms.Padding(2);
-            this.chkUnpaidReports.Name = "chkUnpaidReports";
-            this.chkUnpaidReports.Size = new System.Drawing.Size(93, 17);
-            this.chkUnpaidReports.TabIndex = 92;
-            this.chkUnpaidReports.Text = "Unpaid Status";
-            this.chkUnpaidReports.UseVisualStyleBackColor = true;
-            this.chkUnpaidReports.CheckStateChanged += new System.EventHandler(this.chkUnpaidReports_CheckStateChanged);
-            // 
-            // chkPartiallyPaidReportsOnly
-            // 
-            this.chkPartiallyPaidReportsOnly.AutoSize = true;
-            this.chkPartiallyPaidReportsOnly.Location = new System.Drawing.Point(470, 138);
-            this.chkPartiallyPaidReportsOnly.Margin = new System.Windows.Forms.Padding(2);
-            this.chkPartiallyPaidReportsOnly.Name = "chkPartiallyPaidReportsOnly";
-            this.chkPartiallyPaidReportsOnly.Size = new System.Drawing.Size(119, 17);
-            this.chkPartiallyPaidReportsOnly.TabIndex = 93;
-            this.chkPartiallyPaidReportsOnly.Text = "Partially Paid Status";
-            this.chkPartiallyPaidReportsOnly.UseVisualStyleBackColor = true;
-            this.chkPartiallyPaidReportsOnly.CheckStateChanged += new System.EventHandler(this.chkPartiallyPaidReportsOnly_CheckStateChanged);
-            // 
-            // chkPaidReports
-            // 
-            this.chkPaidReports.AutoSize = true;
-            this.chkPaidReports.Location = new System.Drawing.Point(470, 95);
-            this.chkPaidReports.Margin = new System.Windows.Forms.Padding(2);
-            this.chkPaidReports.Name = "chkPaidReports";
-            this.chkPaidReports.Size = new System.Drawing.Size(80, 17);
-            this.chkPaidReports.TabIndex = 94;
-            this.chkPaidReports.Text = "Paid Status";
-            this.chkPaidReports.UseVisualStyleBackColor = true;
-            this.chkPaidReports.CheckedChanged += new System.EventHandler(this.chkPaidReports_CheckedChanged);
             // 
             // Form1
             // 

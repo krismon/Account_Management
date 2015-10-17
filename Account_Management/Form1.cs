@@ -981,6 +981,8 @@ namespace Account_Management
             FileStream fs = new FileStream(Filename + ".pdf", FileMode.Create, FileAccess.Write, FileShare.None);
             Document doc = new Document(PageSize.LETTER, 10f, 10f, 10f, 10f);
             PdfWriter writer = PdfWriter.GetInstance(doc, fs);
+            bool FilterAdded = false;
+            decimal total = 0;
             if (Table.Columns.Count > 0)
             {
                 PdfPTable table = new PdfPTable(Table.Columns.Count);
@@ -996,13 +998,59 @@ namespace Account_Management
                 {
                     foreach (DataGridViewColumn column in Table.Columns)
                     {
+                        if (Table.Columns[column.Index].HeaderText.ToString().ToUpper().Equals("AMOUNT"))
+                        {
+                            total += Convert.ToDecimal(Table[column.Index, row.Index].Value.ToString());
+                        }
                         table.AddCell(Table[column.Index, row.Index].Value.ToString());
                     }
                 }
 
+                Paragraph paraTotal = new Paragraph(new Chunk("Total: " + total.ToString("#,##0.00") + "PHP"));
+                Paragraph paraBranch = new Paragraph(new Chunk("Branch: " + txtReportBranch.Text));
+                Paragraph paraSales_Representative = new Paragraph(new Chunk("Sales Representative: " + txtReportSalesRep.Text));
+                Paragraph paraInvoiceDue = new Paragraph(new Chunk("Invoice Date: " + pkrReportInvoiceDate.Value.ToString("yyyy-MM-dd")));
+                Paragraph paraDueDate = new Paragraph(new Chunk("Due Date: " + pkrReportDueDate.Value.ToString("yyyy-MM-dd")));
+                Paragraph paraAll = new Paragraph(new Chunk("Filter: ALL"));
 
+                paraTotal.Alignment = Element.ALIGN_RIGHT;
                 doc.Open();
+
+                if (!string.IsNullOrEmpty(txtReportBranch.Text)){
+                    doc.Add(paraBranch);
+                    //doc.Add(Chunk.NEWLINE);
+                    FilterAdded = true;
+                }
+                if (!string.IsNullOrEmpty(txtReportSalesRep.Text))
+                {
+                    doc.Add(paraSales_Representative);
+                    //doc.Add(Chunk.NEWLINE);
+                    FilterAdded = true;
+                }
+                if (!string.IsNullOrEmpty(pkrReportInvoiceDate.Value.ToString("yyyy-MM-dd")) && chkInvoiceDatePkr.Checked)
+                {
+                    doc.Add(paraInvoiceDue);
+                    //doc.Add(Chunk.NEWLINE);
+                    FilterAdded = true;
+                }
+                if (!string.IsNullOrEmpty(pkrReportDueDate.Value.ToString("yyyy-MM-dd")) && chkDueDatePkr.Checked)
+                {
+                    doc.Add(paraDueDate);
+                    //doc.Add(Chunk.NEWLINE);
+                    FilterAdded = true;
+                }
+                if(FilterAdded == false)
+                {
+                    doc.Add(paraAll);
+                    doc.Add(Chunk.NEWLINE);
+                }
+                else
+                {
+                    doc.Add(Chunk.NEWLINE);
+                }
                 doc.Add(table);
+                doc.Add(Chunk.NEWLINE);
+                doc.Add(paraTotal);
                 doc.Close();
                 System.Diagnostics.Process.Start(Filename + ".pdf");
             }

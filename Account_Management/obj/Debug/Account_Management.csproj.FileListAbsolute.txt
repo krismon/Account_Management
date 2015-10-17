@@ -15,3 +15,12 @@ C:\Visual Studio\Account_Management\Account_Management\bin\Debug\EntityFramework
 C:\Visual Studio\Account_Management\Account_Management\bin\Debug\EntityFramework.SqlServer.xml
 C:\Visual Studio\Account_Management\Account_Management\bin\Debug\System.Data.SQLite.xml
 C:\Visual Studio\Account_Management\Account_Management\obj\Debug\Account_Management.AddItem.resources
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\bin\Debug\Account_Management.exe.config
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\Account_Management.exe
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\Account_Management.pdb
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\Account_Management.AddItem.resources
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\Account_Management.Form1.resources
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\Account_Management.Properties.Resources.resources
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\Account_Management.UserManagement.resources
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\Account_Management.ViewEditInvoiceItem.resources
+C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\Account_Management.csproj.GenerateResource.Cache
