@@ -420,7 +420,7 @@ namespace Account_Management
 
                     DAO.UpdateQuery(Constants.TableNames.PERSONNEL, dicData, "PERSONNEL_ID", PersonnelId.ToString());
                 }
-                if (!DAO.ItemExist(txtInvoiceNumber.Text.ToString()))
+                if (!DAO.InvoiceExist(txtInvoiceNumber.Text.ToString()))
                 {
                     int InvoiceDiscount = 0;
                     int InvoiceItemDiscount = 0;
@@ -451,7 +451,7 @@ namespace Account_Management
                         }
                         if (Row.Cells[1].Value != null)
                         {
-                            if (!DAO.ItemExist(Row.Cells[Constants.RowColumnCodeForAddInvoice.ITEM_CODE].Value.ToString().Trim()))
+                            if (!DAO.ItemExist(Row.Cells[Constants.RowColumnCodeForAddInvoice.ITEM_CODE].Value.ToString().Trim(), Convert.ToDecimal(Row.Cells[Constants.RowColumnCodeForAddInvoice.PRICE].Value.ToString().Trim())))
                             {
                                 ProductId = DAO.InsertItem(Row.Cells[Constants.RowColumnCodeForAddInvoice.ITEM_CODE].Value.ToString().Trim(),
                                     Row.Cells[Constants.RowColumnCodeForAddInvoice.BRAND].Value.ToString().Trim(),

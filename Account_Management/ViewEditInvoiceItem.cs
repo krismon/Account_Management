@@ -650,7 +650,7 @@ namespace Account_Management
                     }
                     if (Row.Cells[1].Value != null)
                     {
-                        if (!DAO.ItemExist(Row.Cells[Constants.RowColumnCodeForAddInvoice.ITEM_CODE].Value.ToString().Trim()))
+                        if (!DAO.ItemExist(Row.Cells[Constants.RowColumnCodeForAddInvoice.ITEM_CODE].Value.ToString().Trim(), Convert.ToDecimal(Row.Cells[Constants.RowColumnCodeForAddInvoice.PRICE].Value.ToString().Trim())))
                         {
                             ProductId = DAO.InsertItem(Row.Cells[Constants.RowColumnCodeForAddInvoice.ITEM_CODE].Value.ToString().Trim(),
                                 Row.Cells[Constants.RowColumnCodeForAddInvoice.BRAND].Value.ToString().Trim(),

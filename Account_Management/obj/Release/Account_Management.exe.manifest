@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Account_Management.exe" size="115152">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Account_Management.exe" size="114176">
       <assemblyIdentity name="Account_Management" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aBIWDR7WLWT3qSPkf8A1QX1xv0sWqzJPluy1IPckCwM=</dsig:DigestValue>
+        <dsig:DigestValue>7nMHtC9LFhSi9uDFQhUVS5c+4NUfh7i9qLd3mgF2YqA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -137,13 +137,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Account_Management.exe.config" size="2147">
+  <file name="Account_Management.exe.config" size="2182">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>T8SMQc1Y9ZK0xaszytusUh1dn/In4cuC3fxWlhNkqJM=</dsig:DigestValue>
+      <dsig:DigestValue>Z/kSi+SmX/zHtADA2/m96IxJuUGz35noZIk3m57KsvA=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

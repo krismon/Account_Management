@@ -318,9 +318,9 @@ namespace Account_Management
             int PaymentId = InsertQuery(Constants.TableNames.PAYMENTS, InsertParameters);
             return PaymentId;
         }
-        public Boolean ItemExist(string ProductCode)
+        public Boolean ItemExist(string ProductCode, decimal ProductPrice)
         {
-            DataTable td = SelectQuery("Select PRODUCT_ID from " + Constants.TableNames.PRODUCT + " WHERE UPPER(PRODUCT_CODE) = UPPER('" + ProductCode + "')");
+            DataTable td = SelectQuery("Select PRODUCT_ID from " + Constants.TableNames.PRODUCT + " WHERE UPPER(PRODUCT_CODE) = UPPER('" + ProductCode + "') AND UPPER(UNIT_PRICE) = " + ProductPrice);
             if (td.Rows.Count > 0)
             {
                 return true;
