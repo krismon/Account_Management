@@ -786,6 +786,7 @@ namespace Account_Management
 
             chkBranch.Checked = false;
             chkAmount.Checked = false;
+            chkSalesRepresentative.Checked = false;
 
             chkItem.Checked = false;
             //chkReceivableStatus.Checked = false;
@@ -798,6 +799,7 @@ namespace Account_Management
 
             txtReportBranch.Text = "";
             txtReportSalesRep.Text = "";
+            txtReportCustomerName.Text = "";
         }
 
         private int SelectedColumnsForReports()
@@ -863,7 +865,16 @@ namespace Account_Management
                 Columns += chkCustomerName.Checked ? "CUS.NAME AS CUSTOMER_NAME," : "";
 
                 Columns += chkBranch.Checked ? "PER.BRANCH," : "";
-                Columns += chkAmount.Checked ? "PRO.UNIT_PRICE * TRA.QUANTITY AS AMOUNT," : "";
+                Columns += chkSalesRepresentative.Checked ? "PER.NAME," : "";
+                if(chkItem.Checked == true)
+                {
+                    Columns += chkAmount.Checked ? "PRO.UNIT_PRICE * TRA.QUANTITY AS AMOUNT," : "";
+                }
+                else
+                {
+                    Columns += chkAmount.Checked ? "REC.AMOUNT," : "";
+                }
+                
 
                 Columns += chkItem.Checked ? "PRO.PRODUCT_CODE," : "";
                 //Columns += chkReceivableStatus.Checked ? "CAST(REC.RECEIVABLE_STATUS AS TEXT) AS STATUS," : "";
@@ -879,7 +890,10 @@ namespace Account_Management
                 if (Columns.Contains("PRO."))
                 {
                     Joins += "LEFT JOIN " + Constants.TableNames.TRANSACTIONS + " TRA ON TRA.INVOICE_ID = REC.INVOICE_ID ";
-                    Joins += "LEFT JOIN " + Constants.TableNames.PRODUCT + " PRO ON PRO.PRODUCT_ID = TRA.PRODUCT_ID ";
+                    if (chkItem.Checked == true)
+                    {
+                        Joins += "LEFT JOIN " + Constants.TableNames.PRODUCT + " PRO ON PRO.PRODUCT_ID = TRA.PRODUCT_ID ";
+                    }
                 }
 
 
@@ -894,6 +908,14 @@ namespace Account_Management
                         WhereClause += " AND";
                     }
                     WhereClause += " PER.NAME like '%" + txtReportSalesRep.Text + "%'";
+                }
+                if (txtReportCustomerName.Text.Length > 0)
+                {
+                    if (WhereClause.Length > 0)
+                    {
+                        WhereClause += " AND";
+                    }
+                    WhereClause += " CUS.NAME like '%" + txtReportCustomerName.Text + "%'";
                 }
                 if (chkInvoiceDatePkr.Checked)
                 {
@@ -911,7 +933,15 @@ namespace Account_Management
                     }
                     WhereClause += " date(REC.DUE_DATE) = date('" + pkrReportDueDate.Value.ToString("yyyy-MM-dd") + "')";
                 }
-                if (chkUnpaidReports.Checked)
+                if (chkPaidReports.Checked)
+                {
+                    if (WhereClause.Length > 0)
+                    {
+                        WhereClause += " AND";
+                    }
+                    WhereClause += " REC.RECEIVABLE_STATUS = '" + Constants.RecievableStatusCode.FULLY_PAID + "'";
+                }
+                else if (chkUnpaidReports.Checked)
                 {
                     if (WhereClause.Length > 0)
                     {

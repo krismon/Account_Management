@@ -23,12 +23,14 @@ namespace Account_Management
         }
         public class RecievableStatusCode
         {
+            //public const int RECIEVED = 3;
             public const int FULLY_PAID = 2;
             public const int PARTIALLY_PAID = 1;
             public const int UNPAID = 0;
         }
         public class RecievableStatusDisplay
         {
+            //public const string RECIEVED = "Recieved";
             public const string FULLY_PAID = "Paid";
             public const string PARTIALLY_PAID = "Partially Paid";
             public const string UNPAID = "Unpaid";

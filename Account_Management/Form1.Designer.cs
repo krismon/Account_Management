@@ -36,6 +36,9 @@
             this.Label7 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
             this.tabReports = new System.Windows.Forms.TabPage();
+            this.chkSalesRepresentative = new System.Windows.Forms.CheckBox();
+            this.txtReportCustomerName = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.chkPaidReports = new System.Windows.Forms.CheckBox();
             this.chkPartiallyPaidReportsOnly = new System.Windows.Forms.CheckBox();
             this.chkUnpaidReports = new System.Windows.Forms.CheckBox();
@@ -163,10 +166,9 @@
             // chkPaymentTerms
             // 
             this.chkPaymentTerms.AutoSize = true;
-            this.chkPaymentTerms.Location = new System.Drawing.Point(328, 95);
-            this.chkPaymentTerms.Margin = new System.Windows.Forms.Padding(2);
+            this.chkPaymentTerms.Location = new System.Drawing.Point(491, 175);
             this.chkPaymentTerms.Name = "chkPaymentTerms";
-            this.chkPaymentTerms.Size = new System.Drawing.Size(99, 17);
+            this.chkPaymentTerms.Size = new System.Drawing.Size(145, 24);
             this.chkPaymentTerms.TabIndex = 87;
             this.chkPaymentTerms.Text = "Payment Terms";
             this.chkPaymentTerms.UseVisualStyleBackColor = true;
@@ -177,21 +179,20 @@
             this.ddlRecievableStatus.Items.AddRange(new object[] {
             "Unpaid",
             "Partially Paid",
-            "Paid"});
-            this.ddlRecievableStatus.Location = new System.Drawing.Point(515, 79);
-            this.ddlRecievableStatus.Margin = new System.Windows.Forms.Padding(2);
+            "Paid",
+            "Recieved"});
+            this.ddlRecievableStatus.Location = new System.Drawing.Point(772, 122);
             this.ddlRecievableStatus.Name = "ddlRecievableStatus";
-            this.ddlRecievableStatus.Size = new System.Drawing.Size(245, 21);
+            this.ddlRecievableStatus.Size = new System.Drawing.Size(366, 28);
             this.ddlRecievableStatus.TabIndex = 44;
             // 
             // Label10
             // 
             this.Label10.AutoSize = true;
             this.Label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.Label10.Location = new System.Drawing.Point(395, 82);
-            this.Label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label10.Location = new System.Drawing.Point(592, 126);
             this.Label10.Name = "Label10";
-            this.Label10.Size = new System.Drawing.Size(97, 13);
+            this.Label10.Size = new System.Drawing.Size(149, 20);
             this.Label10.TabIndex = 43;
             this.Label10.Text = "Receivable Status:";
             // 
@@ -199,44 +200,43 @@
             // 
             this.pkrInvoiceDate.CustomFormat = "MMMM dd, yyyy";
             this.pkrInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pkrInvoiceDate.Location = new System.Drawing.Point(515, 31);
-            this.pkrInvoiceDate.Margin = new System.Windows.Forms.Padding(2);
+            this.pkrInvoiceDate.Location = new System.Drawing.Point(772, 47);
             this.pkrInvoiceDate.Name = "pkrInvoiceDate";
-            this.pkrInvoiceDate.Size = new System.Drawing.Size(245, 20);
+            this.pkrInvoiceDate.Size = new System.Drawing.Size(366, 26);
             this.pkrInvoiceDate.TabIndex = 40;
             // 
             // Label8
             // 
             this.Label8.AutoSize = true;
-            this.Label8.Location = new System.Drawing.Point(9, 37);
-            this.Label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label8.Location = new System.Drawing.Point(14, 57);
             this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(111, 13);
+            this.Label8.Size = new System.Drawing.Size(165, 20);
             this.Label8.TabIndex = 38;
             this.Label8.Text = "Sales Representative:";
             // 
             // Label7
             // 
             this.Label7.AutoSize = true;
-            this.Label7.Location = new System.Drawing.Point(395, 58);
-            this.Label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label7.Location = new System.Drawing.Point(592, 89);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(116, 13);
+            this.Label7.Size = new System.Drawing.Size(173, 20);
             this.Label7.TabIndex = 37;
             this.Label7.Text = "Payment Terms (Days):";
             // 
             // Label6
             // 
             this.Label6.AutoSize = true;
-            this.Label6.Location = new System.Drawing.Point(395, 37);
-            this.Label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label6.Location = new System.Drawing.Point(592, 57);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(71, 13);
+            this.Label6.Size = new System.Drawing.Size(102, 20);
             this.Label6.TabIndex = 36;
             this.Label6.Text = "Invoice Date:";
             // 
             // tabReports
             // 
+            this.tabReports.Controls.Add(this.chkSalesRepresentative);
+            this.tabReports.Controls.Add(this.txtReportCustomerName);
+            this.tabReports.Controls.Add(this.label31);
             this.tabReports.Controls.Add(this.chkPaidReports);
             this.tabReports.Controls.Add(this.chkPartiallyPaidReportsOnly);
             this.tabReports.Controls.Add(this.chkUnpaidReports);
@@ -263,22 +263,46 @@
             this.tabReports.Controls.Add(this.Label19);
             this.tabReports.Controls.Add(this.Label21);
             this.tabReports.Controls.Add(this.Label23);
-            this.tabReports.Location = new System.Drawing.Point(4, 22);
-            this.tabReports.Margin = new System.Windows.Forms.Padding(2);
+            this.tabReports.Location = new System.Drawing.Point(4, 29);
             this.tabReports.Name = "tabReports";
-            this.tabReports.Padding = new System.Windows.Forms.Padding(2);
-            this.tabReports.Size = new System.Drawing.Size(791, 607);
+            this.tabReports.Padding = new System.Windows.Forms.Padding(3);
+            this.tabReports.Size = new System.Drawing.Size(1206, 928);
             this.tabReports.TabIndex = 2;
             this.tabReports.Text = "Reports";
             this.tabReports.UseVisualStyleBackColor = true;
             // 
+            // chkSalesRepresentative
+            // 
+            this.chkSalesRepresentative.AutoSize = true;
+            this.chkSalesRepresentative.Location = new System.Drawing.Point(491, 241);
+            this.chkSalesRepresentative.Name = "chkSalesRepresentative";
+            this.chkSalesRepresentative.Size = new System.Drawing.Size(187, 24);
+            this.chkSalesRepresentative.TabIndex = 97;
+            this.chkSalesRepresentative.Text = "Sales Representative";
+            this.chkSalesRepresentative.UseVisualStyleBackColor = true;
+            // 
+            // txtReportCustomerName
+            // 
+            this.txtReportCustomerName.Location = new System.Drawing.Point(196, 109);
+            this.txtReportCustomerName.Name = "txtReportCustomerName";
+            this.txtReportCustomerName.Size = new System.Drawing.Size(271, 26);
+            this.txtReportCustomerName.TabIndex = 96;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(15, 105);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(124, 20);
+            this.label31.TabIndex = 95;
+            this.label31.Text = "Customer Name";
+            // 
             // chkPaidReports
             // 
             this.chkPaidReports.AutoSize = true;
-            this.chkPaidReports.Location = new System.Drawing.Point(470, 95);
-            this.chkPaidReports.Margin = new System.Windows.Forms.Padding(2);
+            this.chkPaidReports.Location = new System.Drawing.Point(704, 175);
             this.chkPaidReports.Name = "chkPaidReports";
-            this.chkPaidReports.Size = new System.Drawing.Size(80, 17);
+            this.chkPaidReports.Size = new System.Drawing.Size(117, 24);
             this.chkPaidReports.TabIndex = 94;
             this.chkPaidReports.Text = "Paid Status";
             this.chkPaidReports.UseVisualStyleBackColor = true;
@@ -287,10 +311,9 @@
             // chkPartiallyPaidReportsOnly
             // 
             this.chkPartiallyPaidReportsOnly.AutoSize = true;
-            this.chkPartiallyPaidReportsOnly.Location = new System.Drawing.Point(470, 138);
-            this.chkPartiallyPaidReportsOnly.Margin = new System.Windows.Forms.Padding(2);
+            this.chkPartiallyPaidReportsOnly.Location = new System.Drawing.Point(704, 241);
             this.chkPartiallyPaidReportsOnly.Name = "chkPartiallyPaidReportsOnly";
-            this.chkPartiallyPaidReportsOnly.Size = new System.Drawing.Size(119, 17);
+            this.chkPartiallyPaidReportsOnly.Size = new System.Drawing.Size(175, 24);
             this.chkPartiallyPaidReportsOnly.TabIndex = 93;
             this.chkPartiallyPaidReportsOnly.Text = "Partially Paid Status";
             this.chkPartiallyPaidReportsOnly.UseVisualStyleBackColor = true;
@@ -299,10 +322,9 @@
             // chkUnpaidReports
             // 
             this.chkUnpaidReports.AutoSize = true;
-            this.chkUnpaidReports.Location = new System.Drawing.Point(470, 116);
-            this.chkUnpaidReports.Margin = new System.Windows.Forms.Padding(2);
+            this.chkUnpaidReports.Location = new System.Drawing.Point(704, 207);
             this.chkUnpaidReports.Name = "chkUnpaidReports";
-            this.chkUnpaidReports.Size = new System.Drawing.Size(93, 17);
+            this.chkUnpaidReports.Size = new System.Drawing.Size(137, 24);
             this.chkUnpaidReports.TabIndex = 92;
             this.chkUnpaidReports.Text = "Unpaid Status";
             this.chkUnpaidReports.UseVisualStyleBackColor = true;
@@ -310,9 +332,10 @@
             // 
             // PrintReportsPDF
             // 
-            this.PrintReportsPDF.Location = new System.Drawing.Point(711, 179);
+            this.PrintReportsPDF.Location = new System.Drawing.Point(1067, 275);
+            this.PrintReportsPDF.Margin = new System.Windows.Forms.Padding(5);
             this.PrintReportsPDF.Name = "PrintReportsPDF";
-            this.PrintReportsPDF.Size = new System.Drawing.Size(75, 30);
+            this.PrintReportsPDF.Size = new System.Drawing.Size(113, 46);
             this.PrintReportsPDF.TabIndex = 91;
             this.PrintReportsPDF.Text = "Print to PDF";
             this.PrintReportsPDF.UseVisualStyleBackColor = true;
@@ -321,9 +344,10 @@
             // chkDueDatePkr
             // 
             this.chkDueDatePkr.AutoSize = true;
-            this.chkDueDatePkr.Location = new System.Drawing.Point(345, 45);
+            this.chkDueDatePkr.Location = new System.Drawing.Point(518, 69);
+            this.chkDueDatePkr.Margin = new System.Windows.Forms.Padding(5);
             this.chkDueDatePkr.Name = "chkDueDatePkr";
-            this.chkDueDatePkr.Size = new System.Drawing.Size(15, 14);
+            this.chkDueDatePkr.Size = new System.Drawing.Size(22, 21);
             this.chkDueDatePkr.TabIndex = 90;
             this.chkDueDatePkr.UseVisualStyleBackColor = true;
             this.chkDueDatePkr.CheckedChanged += new System.EventHandler(this.chkDueDatePkr_CheckedChanged);
@@ -332,9 +356,10 @@
             // 
             this.chkInvoiceDatePkr.AutoSize = true;
             this.chkInvoiceDatePkr.Cursor = System.Windows.Forms.Cursors.Default;
-            this.chkInvoiceDatePkr.Location = new System.Drawing.Point(345, 22);
+            this.chkInvoiceDatePkr.Location = new System.Drawing.Point(518, 34);
+            this.chkInvoiceDatePkr.Margin = new System.Windows.Forms.Padding(5);
             this.chkInvoiceDatePkr.Name = "chkInvoiceDatePkr";
-            this.chkInvoiceDatePkr.Size = new System.Drawing.Size(15, 14);
+            this.chkInvoiceDatePkr.Size = new System.Drawing.Size(22, 21);
             this.chkInvoiceDatePkr.TabIndex = 89;
             this.chkInvoiceDatePkr.UseVisualStyleBackColor = true;
             this.chkInvoiceDatePkr.CheckedChanged += new System.EventHandler(this.chkInvoiceDatePkr_CheckedChanged);
@@ -342,20 +367,18 @@
             // Label17
             // 
             this.Label17.AutoSize = true;
-            this.Label17.Location = new System.Drawing.Point(14, 76);
-            this.Label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label17.Location = new System.Drawing.Point(20, 146);
             this.Label17.Name = "Label17";
-            this.Label17.Size = new System.Drawing.Size(77, 13);
+            this.Label17.Size = new System.Drawing.Size(115, 20);
             this.Label17.TabIndex = 88;
             this.Label17.Text = "Report Details:";
             // 
             // chkDueDate
             // 
             this.chkDueDate.AutoSize = true;
-            this.chkDueDate.Location = new System.Drawing.Point(206, 138);
-            this.chkDueDate.Margin = new System.Windows.Forms.Padding(2);
+            this.chkDueDate.Location = new System.Drawing.Point(308, 241);
             this.chkDueDate.Name = "chkDueDate";
-            this.chkDueDate.Size = new System.Drawing.Size(72, 17);
+            this.chkDueDate.Size = new System.Drawing.Size(104, 24);
             this.chkDueDate.TabIndex = 86;
             this.chkDueDate.Text = "Due Date";
             this.chkDueDate.UseVisualStyleBackColor = true;
@@ -366,10 +389,9 @@
             this.chkReceivableStatus.Checked = true;
             this.chkReceivableStatus.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkReceivableStatus.Enabled = false;
-            this.chkReceivableStatus.Location = new System.Drawing.Point(328, 117);
-            this.chkReceivableStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.chkReceivableStatus.Location = new System.Drawing.Point(491, 209);
             this.chkReceivableStatus.Name = "chkReceivableStatus";
-            this.chkReceivableStatus.Size = new System.Drawing.Size(113, 17);
+            this.chkReceivableStatus.Size = new System.Drawing.Size(164, 24);
             this.chkReceivableStatus.TabIndex = 85;
             this.chkReceivableStatus.Text = "Receivable Status";
             this.chkReceivableStatus.UseVisualStyleBackColor = true;
@@ -377,10 +399,9 @@
             // chkItem
             // 
             this.chkItem.AutoSize = true;
-            this.chkItem.Location = new System.Drawing.Point(206, 117);
-            this.chkItem.Margin = new System.Windows.Forms.Padding(2);
+            this.chkItem.Location = new System.Drawing.Point(308, 209);
             this.chkItem.Name = "chkItem";
-            this.chkItem.Size = new System.Drawing.Size(46, 17);
+            this.chkItem.Size = new System.Drawing.Size(67, 24);
             this.chkItem.TabIndex = 84;
             this.chkItem.Text = "Item";
             this.chkItem.UseVisualStyleBackColor = true;
@@ -388,10 +409,9 @@
             // chkAmount
             // 
             this.chkAmount.AutoSize = true;
-            this.chkAmount.Location = new System.Drawing.Point(206, 95);
-            this.chkAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.chkAmount.Location = new System.Drawing.Point(308, 175);
             this.chkAmount.Name = "chkAmount";
-            this.chkAmount.Size = new System.Drawing.Size(62, 17);
+            this.chkAmount.Size = new System.Drawing.Size(91, 24);
             this.chkAmount.TabIndex = 83;
             this.chkAmount.Text = "Amount";
             this.chkAmount.UseVisualStyleBackColor = true;
@@ -399,10 +419,9 @@
             // chkBranch
             // 
             this.chkBranch.AutoSize = true;
-            this.chkBranch.Location = new System.Drawing.Point(67, 138);
-            this.chkBranch.Margin = new System.Windows.Forms.Padding(2);
+            this.chkBranch.Location = new System.Drawing.Point(100, 241);
             this.chkBranch.Name = "chkBranch";
-            this.chkBranch.Size = new System.Drawing.Size(60, 17);
+            this.chkBranch.Size = new System.Drawing.Size(86, 24);
             this.chkBranch.TabIndex = 82;
             this.chkBranch.Text = "Branch";
             this.chkBranch.UseVisualStyleBackColor = true;
@@ -410,10 +429,9 @@
             // chkCustomerName
             // 
             this.chkCustomerName.AutoSize = true;
-            this.chkCustomerName.Location = new System.Drawing.Point(67, 117);
-            this.chkCustomerName.Margin = new System.Windows.Forms.Padding(2);
+            this.chkCustomerName.Location = new System.Drawing.Point(100, 209);
             this.chkCustomerName.Name = "chkCustomerName";
-            this.chkCustomerName.Size = new System.Drawing.Size(101, 17);
+            this.chkCustomerName.Size = new System.Drawing.Size(150, 24);
             this.chkCustomerName.TabIndex = 81;
             this.chkCustomerName.Text = "Customer Name";
             this.chkCustomerName.UseVisualStyleBackColor = true;
@@ -421,10 +439,9 @@
             // chkInvoiceNumber
             // 
             this.chkInvoiceNumber.AutoSize = true;
-            this.chkInvoiceNumber.Location = new System.Drawing.Point(67, 95);
-            this.chkInvoiceNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.chkInvoiceNumber.Location = new System.Drawing.Point(100, 175);
             this.chkInvoiceNumber.Name = "chkInvoiceNumber";
-            this.chkInvoiceNumber.Size = new System.Drawing.Size(101, 17);
+            this.chkInvoiceNumber.Size = new System.Drawing.Size(145, 24);
             this.chkInvoiceNumber.TabIndex = 80;
             this.chkInvoiceNumber.Text = "Invoice Number";
             this.chkInvoiceNumber.UseVisualStyleBackColor = true;
@@ -434,28 +451,25 @@
             this.pkrReportInvoiceDate.CustomFormat = "MMMM dd, yyyy";
             this.pkrReportInvoiceDate.Enabled = false;
             this.pkrReportInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pkrReportInvoiceDate.Location = new System.Drawing.Point(440, 19);
-            this.pkrReportInvoiceDate.Margin = new System.Windows.Forms.Padding(2);
+            this.pkrReportInvoiceDate.Location = new System.Drawing.Point(660, 29);
             this.pkrReportInvoiceDate.Name = "pkrReportInvoiceDate";
-            this.pkrReportInvoiceDate.Size = new System.Drawing.Size(175, 20);
+            this.pkrReportInvoiceDate.Size = new System.Drawing.Size(261, 26);
             this.pkrReportInvoiceDate.TabIndex = 79;
             // 
             // Label25
             // 
             this.Label25.AutoSize = true;
-            this.Label25.Location = new System.Drawing.Point(380, 45);
-            this.Label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label25.Location = new System.Drawing.Point(570, 69);
             this.Label25.Name = "Label25";
-            this.Label25.Size = new System.Drawing.Size(56, 13);
+            this.Label25.Size = new System.Drawing.Size(82, 20);
             this.Label25.TabIndex = 77;
             this.Label25.Text = "Due Date:";
             // 
             // btnResetReports
             // 
-            this.btnResetReports.Location = new System.Drawing.Point(327, 177);
-            this.btnResetReports.Margin = new System.Windows.Forms.Padding(2);
+            this.btnResetReports.Location = new System.Drawing.Point(491, 272);
             this.btnResetReports.Name = "btnResetReports";
-            this.btnResetReports.Size = new System.Drawing.Size(66, 32);
+            this.btnResetReports.Size = new System.Drawing.Size(99, 49);
             this.btnResetReports.TabIndex = 74;
             this.btnResetReports.Text = "Reset";
             this.btnResetReports.UseVisualStyleBackColor = true;
@@ -463,10 +477,9 @@
             // 
             // btnSearchReport
             // 
-            this.btnSearchReport.Location = new System.Drawing.Point(414, 177);
-            this.btnSearchReport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchReport.Location = new System.Drawing.Point(621, 272);
             this.btnSearchReport.Name = "btnSearchReport";
-            this.btnSearchReport.Size = new System.Drawing.Size(66, 32);
+            this.btnSearchReport.Size = new System.Drawing.Size(99, 49);
             this.btnSearchReport.TabIndex = 73;
             this.btnSearchReport.Text = "Search";
             this.btnSearchReport.UseVisualStyleBackColor = true;
@@ -474,18 +487,16 @@
             // 
             // txtReportSalesRep
             // 
-            this.txtReportSalesRep.Location = new System.Drawing.Point(131, 45);
-            this.txtReportSalesRep.Margin = new System.Windows.Forms.Padding(2);
+            this.txtReportSalesRep.Location = new System.Drawing.Point(196, 69);
             this.txtReportSalesRep.Name = "txtReportSalesRep";
-            this.txtReportSalesRep.Size = new System.Drawing.Size(182, 20);
+            this.txtReportSalesRep.Size = new System.Drawing.Size(271, 26);
             this.txtReportSalesRep.TabIndex = 65;
             // 
             // txtReportBranch
             // 
-            this.txtReportBranch.Location = new System.Drawing.Point(131, 22);
-            this.txtReportBranch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtReportBranch.Location = new System.Drawing.Point(196, 34);
             this.txtReportBranch.Name = "txtReportBranch";
-            this.txtReportBranch.Size = new System.Drawing.Size(182, 20);
+            this.txtReportBranch.Size = new System.Drawing.Size(271, 26);
             this.txtReportBranch.TabIndex = 63;
             // 
             // dgvReportTable
@@ -497,13 +508,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvReportTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvReportTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReportTable.Location = new System.Drawing.Point(12, 214);
-            this.dgvReportTable.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvReportTable.Location = new System.Drawing.Point(18, 329);
             this.dgvReportTable.Name = "dgvReportTable";
             this.dgvReportTable.ReadOnly = true;
             this.dgvReportTable.RowHeadersVisible = false;
             this.dgvReportTable.RowTemplate.Height = 24;
-            this.dgvReportTable.Size = new System.Drawing.Size(775, 369);
+            this.dgvReportTable.Size = new System.Drawing.Size(1178, 554);
             this.dgvReportTable.TabIndex = 70;
             // 
             // pkrReportDueDate
@@ -511,61 +521,54 @@
             this.pkrReportDueDate.CustomFormat = "MMMM dd, yyyy";
             this.pkrReportDueDate.Enabled = false;
             this.pkrReportDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pkrReportDueDate.Location = new System.Drawing.Point(441, 43);
-            this.pkrReportDueDate.Margin = new System.Windows.Forms.Padding(2);
+            this.pkrReportDueDate.Location = new System.Drawing.Point(662, 66);
             this.pkrReportDueDate.Name = "pkrReportDueDate";
-            this.pkrReportDueDate.Size = new System.Drawing.Size(175, 20);
+            this.pkrReportDueDate.Size = new System.Drawing.Size(261, 26);
             this.pkrReportDueDate.TabIndex = 64;
             // 
             // Label19
             // 
             this.Label19.AutoSize = true;
-            this.Label19.Location = new System.Drawing.Point(10, 42);
-            this.Label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label19.Location = new System.Drawing.Point(15, 65);
             this.Label19.Name = "Label19";
-            this.Label19.Size = new System.Drawing.Size(111, 13);
+            this.Label19.Size = new System.Drawing.Size(165, 20);
             this.Label19.TabIndex = 62;
             this.Label19.Text = "Sales Representative:";
             // 
             // Label21
             // 
             this.Label21.AutoSize = true;
-            this.Label21.Location = new System.Drawing.Point(365, 22);
-            this.Label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label21.Location = new System.Drawing.Point(547, 34);
             this.Label21.Name = "Label21";
-            this.Label21.Size = new System.Drawing.Size(71, 13);
+            this.Label21.Size = new System.Drawing.Size(102, 20);
             this.Label21.TabIndex = 60;
             this.Label21.Text = "Invoice Date:";
             // 
             // Label23
             // 
             this.Label23.AutoSize = true;
-            this.Label23.Location = new System.Drawing.Point(10, 20);
-            this.Label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label23.Location = new System.Drawing.Point(15, 31);
             this.Label23.Name = "Label23";
-            this.Label23.Size = new System.Drawing.Size(44, 13);
+            this.Label23.Size = new System.Drawing.Size(64, 20);
             this.Label23.TabIndex = 58;
             this.Label23.Text = "Branch:";
             // 
             // Add_Rec
             // 
-            this.Add_Rec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Add_Rec.Controls.Add(this.tabInsertInvoice);
             this.Add_Rec.Controls.Add(this.tabSearchInvoice);
             this.Add_Rec.Controls.Add(this.tabReports);
             this.Add_Rec.Controls.Add(this.tabTableViewer);
             this.Add_Rec.Enabled = false;
-            this.Add_Rec.Location = new System.Drawing.Point(9, 42);
-            this.Add_Rec.Margin = new System.Windows.Forms.Padding(2);
+            this.Add_Rec.Location = new System.Drawing.Point(14, 65);
             this.Add_Rec.Name = "Add_Rec";
             this.Add_Rec.SelectedIndex = 0;
-            this.Add_Rec.Size = new System.Drawing.Size(799, 633);
+            this.Add_Rec.Size = new System.Drawing.Size(1214, 761);
             this.Add_Rec.TabIndex = 30;
             // 
             // tabInsertInvoice
             // 
+            this.tabInsertInvoice.AutoScroll = true;
             this.tabInsertInvoice.Controls.Add(this.AddInvoiceItemRow);
             this.tabInsertInvoice.Controls.Add(this.label27);
             this.tabInsertInvoice.Controls.Add(this.label24);
@@ -599,20 +602,20 @@
             this.tabInsertInvoice.Controls.Add(this.Label4);
             this.tabInsertInvoice.Controls.Add(this.Label2);
             this.tabInsertInvoice.Controls.Add(this.Label1);
-            this.tabInsertInvoice.Location = new System.Drawing.Point(4, 22);
-            this.tabInsertInvoice.Margin = new System.Windows.Forms.Padding(2);
+            this.tabInsertInvoice.Location = new System.Drawing.Point(4, 29);
             this.tabInsertInvoice.Name = "tabInsertInvoice";
-            this.tabInsertInvoice.Padding = new System.Windows.Forms.Padding(2);
-            this.tabInsertInvoice.Size = new System.Drawing.Size(791, 607);
+            this.tabInsertInvoice.Padding = new System.Windows.Forms.Padding(3);
+            this.tabInsertInvoice.Size = new System.Drawing.Size(1206, 728);
             this.tabInsertInvoice.TabIndex = 0;
             this.tabInsertInvoice.Text = "Add Invoice";
             this.tabInsertInvoice.UseVisualStyleBackColor = true;
             // 
             // AddInvoiceItemRow
             // 
-            this.AddInvoiceItemRow.Location = new System.Drawing.Point(12, 156);
+            this.AddInvoiceItemRow.Location = new System.Drawing.Point(18, 240);
+            this.AddInvoiceItemRow.Margin = new System.Windows.Forms.Padding(5);
             this.AddInvoiceItemRow.Name = "AddInvoiceItemRow";
-            this.AddInvoiceItemRow.Size = new System.Drawing.Size(75, 23);
+            this.AddInvoiceItemRow.Size = new System.Drawing.Size(113, 35);
             this.AddInvoiceItemRow.TabIndex = 65;
             this.AddInvoiceItemRow.Text = "ADD ROW";
             this.AddInvoiceItemRow.UseVisualStyleBackColor = true;
@@ -624,10 +627,9 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.Maroon;
-            this.label27.Location = new System.Drawing.Point(69, 490);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Location = new System.Drawing.Point(97, 545);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(31, 9);
+            this.label27.Size = new System.Drawing.Size(51, 15);
             this.label27.TabIndex = 64;
             this.label27.Text = "optional";
             // 
@@ -636,31 +638,30 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Maroon;
-            this.label24.Location = new System.Drawing.Point(450, 106);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Location = new System.Drawing.Point(675, 163);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(31, 9);
+            this.label24.Size = new System.Drawing.Size(51, 15);
             this.label24.TabIndex = 63;
             this.label24.Text = "optional";
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(122, 132);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddress.Location = new System.Drawing.Point(183, 203);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(638, 20);
+            this.txtAddress.Size = new System.Drawing.Size(955, 26);
             this.txtAddress.TabIndex = 62;
             // 
             // txtPaymentTerms
             // 
-            this.txtPaymentTerms.Location = new System.Drawing.Point(515, 55);
+            this.txtPaymentTerms.Location = new System.Drawing.Point(772, 85);
+            this.txtPaymentTerms.Margin = new System.Windows.Forms.Padding(5);
             this.txtPaymentTerms.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.txtPaymentTerms.Name = "txtPaymentTerms";
-            this.txtPaymentTerms.Size = new System.Drawing.Size(245, 20);
+            this.txtPaymentTerms.Size = new System.Drawing.Size(367, 26);
             this.txtPaymentTerms.TabIndex = 61;
             this.txtPaymentTerms.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentTerms.Value = new decimal(new int[] {
@@ -674,11 +675,10 @@
             this.txtInvoiceTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtInvoiceTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInvoiceTotal.Location = new System.Drawing.Point(116, 444);
-            this.txtInvoiceTotal.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvoiceTotal.Location = new System.Drawing.Point(167, 474);
             this.txtInvoiceTotal.Name = "txtInvoiceTotal";
             this.txtInvoiceTotal.ReadOnly = true;
-            this.txtInvoiceTotal.Size = new System.Drawing.Size(671, 35);
+            this.txtInvoiceTotal.Size = new System.Drawing.Size(1027, 48);
             this.txtInvoiceTotal.TabIndex = 60;
             // 
             // label22
@@ -687,37 +687,33 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(10, 445);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Location = new System.Drawing.Point(8, 476);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(110, 31);
+            this.label22.Size = new System.Drawing.Size(159, 46);
             this.label22.TabIndex = 59;
             this.label22.Text = "TOTAL:";
             // 
             // txtInvoiceNumber
             // 
-            this.txtInvoiceNumber.Location = new System.Drawing.Point(122, 10);
-            this.txtInvoiceNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvoiceNumber.Location = new System.Drawing.Point(183, 15);
             this.txtInvoiceNumber.Name = "txtInvoiceNumber";
-            this.txtInvoiceNumber.Size = new System.Drawing.Size(214, 20);
+            this.txtInvoiceNumber.Size = new System.Drawing.Size(319, 26);
             this.txtInvoiceNumber.TabIndex = 30;
             // 
             // Label3
             // 
             this.Label3.AutoSize = true;
-            this.Label3.Location = new System.Drawing.Point(10, 13);
-            this.Label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label3.Location = new System.Drawing.Point(15, 20);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(85, 13);
+            this.Label3.Size = new System.Drawing.Size(123, 20);
             this.Label3.TabIndex = 33;
             this.Label3.Text = "Invoice Number:";
             // 
             // txtInvoiceDiscount
             // 
-            this.txtInvoiceDiscount.Location = new System.Drawing.Point(515, 104);
-            this.txtInvoiceDiscount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvoiceDiscount.Location = new System.Drawing.Point(772, 160);
             this.txtInvoiceDiscount.Name = "txtInvoiceDiscount";
-            this.txtInvoiceDiscount.Size = new System.Drawing.Size(245, 20);
+            this.txtInvoiceDiscount.Size = new System.Drawing.Size(366, 26);
             this.txtInvoiceDiscount.TabIndex = 58;
             this.txtInvoiceDiscount.TextChanged += new System.EventHandler(this.txtInvoiceDiscount_TextChanged);
             // 
@@ -725,29 +721,26 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(394, 106);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Location = new System.Drawing.Point(591, 163);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(52, 13);
+            this.label20.Size = new System.Drawing.Size(76, 20);
             this.label20.TabIndex = 57;
             this.label20.Text = "Discount:";
             // 
             // txtContactNumber
             // 
-            this.txtContactNumber.Location = new System.Drawing.Point(122, 108);
-            this.txtContactNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContactNumber.Location = new System.Drawing.Point(183, 166);
             this.txtContactNumber.Name = "txtContactNumber";
-            this.txtContactNumber.Size = new System.Drawing.Size(214, 20);
+            this.txtContactNumber.Size = new System.Drawing.Size(319, 26);
             this.txtContactNumber.TabIndex = 56;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(10, 111);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Location = new System.Drawing.Point(15, 171);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(87, 13);
+            this.label18.Size = new System.Drawing.Size(129, 20);
             this.label18.TabIndex = 55;
             this.label18.Text = "Contact Number:";
             // 
@@ -755,30 +748,27 @@
             // 
             this.pkrEntryDate.CustomFormat = "MMMM dd, yyyy";
             this.pkrEntryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pkrEntryDate.Location = new System.Drawing.Point(515, 7);
-            this.pkrEntryDate.Margin = new System.Windows.Forms.Padding(2);
+            this.pkrEntryDate.Location = new System.Drawing.Point(772, 11);
             this.pkrEntryDate.Name = "pkrEntryDate";
-            this.pkrEntryDate.Size = new System.Drawing.Size(245, 20);
+            this.pkrEntryDate.Size = new System.Drawing.Size(366, 26);
             this.pkrEntryDate.TabIndex = 53;
             // 
             // Label9
             // 
             this.Label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Label9.AutoSize = true;
-            this.Label9.Location = new System.Drawing.Point(13, 490);
-            this.Label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label9.Location = new System.Drawing.Point(13, 545);
             this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(52, 13);
+            this.Label9.Size = new System.Drawing.Size(77, 20);
             this.Label9.TabIndex = 52;
             this.Label9.Text = "Remarks:";
             // 
             // Button3
             // 
             this.Button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Button3.Location = new System.Drawing.Point(436, 569);
-            this.Button3.Margin = new System.Windows.Forms.Padding(2);
+            this.Button3.Location = new System.Drawing.Point(655, 666);
             this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(92, 34);
+            this.Button3.Size = new System.Drawing.Size(138, 52);
             this.Button3.TabIndex = 51;
             this.Button3.Text = "BACK TO MAIN";
             this.Button3.UseVisualStyleBackColor = true;
@@ -786,10 +776,9 @@
             // ResetAddInvoice
             // 
             this.ResetAddInvoice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ResetAddInvoice.Location = new System.Drawing.Point(244, 569);
-            this.ResetAddInvoice.Margin = new System.Windows.Forms.Padding(2);
+            this.ResetAddInvoice.Location = new System.Drawing.Point(367, 666);
             this.ResetAddInvoice.Name = "ResetAddInvoice";
-            this.ResetAddInvoice.Size = new System.Drawing.Size(92, 34);
+            this.ResetAddInvoice.Size = new System.Drawing.Size(138, 52);
             this.ResetAddInvoice.TabIndex = 50;
             this.ResetAddInvoice.Text = "RESET";
             this.ResetAddInvoice.UseVisualStyleBackColor = true;
@@ -798,10 +787,9 @@
             // Add
             // 
             this.Add.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Add.Location = new System.Drawing.Point(340, 569);
-            this.Add.Margin = new System.Windows.Forms.Padding(2);
+            this.Add.Location = new System.Drawing.Point(511, 666);
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(92, 34);
+            this.Add.Size = new System.Drawing.Size(138, 52);
             this.Add.TabIndex = 49;
             this.Add.Text = "ADD";
             this.Add.UseVisualStyleBackColor = true;
@@ -811,37 +799,33 @@
             // 
             this.txtRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRemarks.Location = new System.Drawing.Point(15, 505);
-            this.txtRemarks.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRemarks.Location = new System.Drawing.Point(16, 568);
             this.txtRemarks.Name = "txtRemarks";
-            this.txtRemarks.Size = new System.Drawing.Size(772, 60);
+            this.txtRemarks.Size = new System.Drawing.Size(1178, 90);
             this.txtRemarks.TabIndex = 48;
             this.txtRemarks.Text = "";
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(122, 85);
-            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCustomerName.Location = new System.Drawing.Point(183, 131);
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(214, 20);
+            this.txtCustomerName.Size = new System.Drawing.Size(319, 26);
             this.txtCustomerName.TabIndex = 42;
             this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
             // 
             // txtSalesRepresentative
             // 
-            this.txtSalesRepresentative.Location = new System.Drawing.Point(122, 34);
-            this.txtSalesRepresentative.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSalesRepresentative.Location = new System.Drawing.Point(183, 52);
             this.txtSalesRepresentative.Name = "txtSalesRepresentative";
-            this.txtSalesRepresentative.Size = new System.Drawing.Size(214, 20);
+            this.txtSalesRepresentative.Size = new System.Drawing.Size(319, 26);
             this.txtSalesRepresentative.TabIndex = 41;
             this.txtSalesRepresentative.TextChanged += new System.EventHandler(this.txtSalesRepresentative_TextChanged);
             // 
             // txtBranch
             // 
-            this.txtBranch.Location = new System.Drawing.Point(122, 58);
-            this.txtBranch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBranch.Location = new System.Drawing.Point(183, 89);
             this.txtBranch.Name = "txtBranch";
-            this.txtBranch.Size = new System.Drawing.Size(214, 20);
+            this.txtBranch.Size = new System.Drawing.Size(319, 26);
             this.txtBranch.TabIndex = 39;
             // 
             // InvoiceItems
@@ -859,12 +843,11 @@
             this.Price,
             this.Discount,
             this.Amount});
-            this.InvoiceItems.Location = new System.Drawing.Point(13, 184);
-            this.InvoiceItems.Margin = new System.Windows.Forms.Padding(2);
+            this.InvoiceItems.Location = new System.Drawing.Point(20, 283);
             this.InvoiceItems.Name = "InvoiceItems";
             this.InvoiceItems.RowHeadersVisible = false;
             this.InvoiceItems.RowTemplate.Height = 24;
-            this.InvoiceItems.Size = new System.Drawing.Size(774, 245);
+            this.InvoiceItems.Size = new System.Drawing.Size(1174, 174);
             this.InvoiceItems.TabIndex = 46;
             this.InvoiceItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InvoiceItems_CellContentClick);
             this.InvoiceItems.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.InvoiceItems_CellValueChanged);
@@ -923,20 +906,18 @@
             // Label5
             // 
             this.Label5.AutoSize = true;
-            this.Label5.Location = new System.Drawing.Point(395, 13);
-            this.Label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label5.Location = new System.Drawing.Point(592, 20);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(60, 13);
+            this.Label5.Size = new System.Drawing.Size(89, 20);
             this.Label5.TabIndex = 35;
             this.Label5.Text = "Entry Date:";
             // 
             // Label4
             // 
             this.Label4.AutoSize = true;
-            this.Label4.Location = new System.Drawing.Point(10, 61);
-            this.Label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label4.Location = new System.Drawing.Point(15, 94);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(44, 13);
+            this.Label4.Size = new System.Drawing.Size(64, 20);
             this.Label4.TabIndex = 34;
             this.Label4.Text = "Branch:";
             // 
@@ -944,10 +925,9 @@
             // 
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.Location = new System.Drawing.Point(10, 135);
-            this.Label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label2.Location = new System.Drawing.Point(15, 207);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(48, 13);
+            this.Label2.Size = new System.Drawing.Size(72, 20);
             this.Label2.TabIndex = 31;
             this.Label2.Text = "Address:";
             // 
@@ -955,10 +935,9 @@
             // 
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(10, 85);
-            this.Label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label1.Location = new System.Drawing.Point(15, 131);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(85, 13);
+            this.Label1.Size = new System.Drawing.Size(128, 20);
             this.Label1.TabIndex = 29;
             this.Label1.Text = "Customer Name:";
             // 
@@ -991,11 +970,10 @@
             this.tabSearchInvoice.Controls.Add(this.txtSearchInvoiceNumber);
             this.tabSearchInvoice.Controls.Add(this.pkrSearchInvoiceFrom);
             this.tabSearchInvoice.Controls.Add(this.Label13);
-            this.tabSearchInvoice.Location = new System.Drawing.Point(4, 22);
-            this.tabSearchInvoice.Margin = new System.Windows.Forms.Padding(2);
+            this.tabSearchInvoice.Location = new System.Drawing.Point(4, 29);
             this.tabSearchInvoice.Name = "tabSearchInvoice";
-            this.tabSearchInvoice.Padding = new System.Windows.Forms.Padding(2);
-            this.tabSearchInvoice.Size = new System.Drawing.Size(791, 607);
+            this.tabSearchInvoice.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSearchInvoice.Size = new System.Drawing.Size(1206, 928);
             this.tabSearchInvoice.TabIndex = 1;
             this.tabSearchInvoice.Text = "Search Invoice";
             this.tabSearchInvoice.UseVisualStyleBackColor = true;
@@ -1003,9 +981,10 @@
             // chkPartiallyPaid
             // 
             this.chkPartiallyPaid.AutoSize = true;
-            this.chkPartiallyPaid.Location = new System.Drawing.Point(167, 140);
+            this.chkPartiallyPaid.Location = new System.Drawing.Point(250, 215);
+            this.chkPartiallyPaid.Margin = new System.Windows.Forms.Padding(5);
             this.chkPartiallyPaid.Name = "chkPartiallyPaid";
-            this.chkPartiallyPaid.Size = new System.Drawing.Size(86, 17);
+            this.chkPartiallyPaid.Size = new System.Drawing.Size(124, 24);
             this.chkPartiallyPaid.TabIndex = 79;
             this.chkPartiallyPaid.Text = "Partially Paid";
             this.chkPartiallyPaid.UseVisualStyleBackColor = true;
@@ -1013,18 +992,20 @@
             // chkUnpaidInvoice
             // 
             this.chkUnpaidInvoice.AutoSize = true;
-            this.chkUnpaidInvoice.Location = new System.Drawing.Point(101, 140);
+            this.chkUnpaidInvoice.Location = new System.Drawing.Point(151, 215);
+            this.chkUnpaidInvoice.Margin = new System.Windows.Forms.Padding(5);
             this.chkUnpaidInvoice.Name = "chkUnpaidInvoice";
-            this.chkUnpaidInvoice.Size = new System.Drawing.Size(60, 17);
+            this.chkUnpaidInvoice.Size = new System.Drawing.Size(86, 24);
             this.chkUnpaidInvoice.TabIndex = 78;
             this.chkUnpaidInvoice.Text = "Unpaid";
             this.chkUnpaidInvoice.UseVisualStyleBackColor = true;
             // 
             // PrintSearchInvoice
             // 
-            this.PrintSearchInvoice.Location = new System.Drawing.Point(701, 118);
+            this.PrintSearchInvoice.Location = new System.Drawing.Point(1051, 182);
+            this.PrintSearchInvoice.Margin = new System.Windows.Forms.Padding(5);
             this.PrintSearchInvoice.Name = "PrintSearchInvoice";
-            this.PrintSearchInvoice.Size = new System.Drawing.Size(75, 30);
+            this.PrintSearchInvoice.Size = new System.Drawing.Size(113, 46);
             this.PrintSearchInvoice.TabIndex = 77;
             this.PrintSearchInvoice.Text = "Print to PDF";
             this.PrintSearchInvoice.UseVisualStyleBackColor = true;
@@ -1033,9 +1014,10 @@
             // chkDueToday
             // 
             this.chkDueToday.AutoSize = true;
-            this.chkDueToday.Location = new System.Drawing.Point(16, 140);
+            this.chkDueToday.Location = new System.Drawing.Point(24, 215);
+            this.chkDueToday.Margin = new System.Windows.Forms.Padding(5);
             this.chkDueToday.Name = "chkDueToday";
-            this.chkDueToday.Size = new System.Drawing.Size(79, 17);
+            this.chkDueToday.Size = new System.Drawing.Size(112, 24);
             this.chkDueToday.TabIndex = 76;
             this.chkDueToday.Text = "Due Today";
             this.chkDueToday.UseVisualStyleBackColor = true;
@@ -1044,9 +1026,10 @@
             // chkDueTo
             // 
             this.chkDueTo.AutoSize = true;
-            this.chkDueTo.Location = new System.Drawing.Point(551, 86);
+            this.chkDueTo.Location = new System.Drawing.Point(826, 132);
+            this.chkDueTo.Margin = new System.Windows.Forms.Padding(5);
             this.chkDueTo.Name = "chkDueTo";
-            this.chkDueTo.Size = new System.Drawing.Size(15, 14);
+            this.chkDueTo.Size = new System.Drawing.Size(22, 21);
             this.chkDueTo.TabIndex = 75;
             this.chkDueTo.UseVisualStyleBackColor = true;
             this.chkDueTo.CheckedChanged += new System.EventHandler(this.chkDueTo_CheckedChanged);
@@ -1054,9 +1037,10 @@
             // chkDueFrom
             // 
             this.chkDueFrom.AutoSize = true;
-            this.chkDueFrom.Location = new System.Drawing.Point(342, 86);
+            this.chkDueFrom.Location = new System.Drawing.Point(513, 132);
+            this.chkDueFrom.Margin = new System.Windows.Forms.Padding(5);
             this.chkDueFrom.Name = "chkDueFrom";
-            this.chkDueFrom.Size = new System.Drawing.Size(15, 14);
+            this.chkDueFrom.Size = new System.Drawing.Size(22, 21);
             this.chkDueFrom.TabIndex = 74;
             this.chkDueFrom.UseVisualStyleBackColor = true;
             this.chkDueFrom.CheckedChanged += new System.EventHandler(this.chkDueFrom_CheckedChanged);
@@ -1064,9 +1048,10 @@
             // chkEntryTo
             // 
             this.chkEntryTo.AutoSize = true;
-            this.chkEntryTo.Location = new System.Drawing.Point(551, 40);
+            this.chkEntryTo.Location = new System.Drawing.Point(826, 62);
+            this.chkEntryTo.Margin = new System.Windows.Forms.Padding(5);
             this.chkEntryTo.Name = "chkEntryTo";
-            this.chkEntryTo.Size = new System.Drawing.Size(15, 14);
+            this.chkEntryTo.Size = new System.Drawing.Size(22, 21);
             this.chkEntryTo.TabIndex = 73;
             this.chkEntryTo.UseVisualStyleBackColor = true;
             this.chkEntryTo.CheckedChanged += new System.EventHandler(this.chkEntryTo_CheckedChanged);
@@ -1074,9 +1059,10 @@
             // chkEntryFrom
             // 
             this.chkEntryFrom.AutoSize = true;
-            this.chkEntryFrom.Location = new System.Drawing.Point(342, 40);
+            this.chkEntryFrom.Location = new System.Drawing.Point(513, 62);
+            this.chkEntryFrom.Margin = new System.Windows.Forms.Padding(5);
             this.chkEntryFrom.Name = "chkEntryFrom";
-            this.chkEntryFrom.Size = new System.Drawing.Size(15, 14);
+            this.chkEntryFrom.Size = new System.Drawing.Size(22, 21);
             this.chkEntryFrom.TabIndex = 72;
             this.chkEntryFrom.UseVisualStyleBackColor = true;
             this.chkEntryFrom.CheckedChanged += new System.EventHandler(this.chkEntryFrom_CheckedChanged);
@@ -1086,39 +1072,35 @@
             this.pkrInvoiceDueTo.CustomFormat = "MMMM dd, yyyy";
             this.pkrInvoiceDueTo.Enabled = false;
             this.pkrInvoiceDueTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pkrInvoiceDueTo.Location = new System.Drawing.Point(598, 83);
-            this.pkrInvoiceDueTo.Margin = new System.Windows.Forms.Padding(2);
+            this.pkrInvoiceDueTo.Location = new System.Drawing.Point(897, 127);
             this.pkrInvoiceDueTo.Name = "pkrInvoiceDueTo";
-            this.pkrInvoiceDueTo.Size = new System.Drawing.Size(138, 20);
+            this.pkrInvoiceDueTo.Size = new System.Drawing.Size(205, 26);
             this.pkrInvoiceDueTo.TabIndex = 71;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(571, 87);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.Location = new System.Drawing.Point(857, 134);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(23, 13);
+            this.label28.Size = new System.Drawing.Size(31, 20);
             this.label28.TabIndex = 70;
             this.label28.Text = "To:";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(362, 86);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Location = new System.Drawing.Point(543, 132);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(33, 13);
+            this.label29.Size = new System.Drawing.Size(50, 20);
             this.label29.TabIndex = 69;
             this.label29.Text = "From:";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(339, 63);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Location = new System.Drawing.Point(509, 97);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(56, 13);
+            this.label30.Size = new System.Drawing.Size(82, 20);
             this.label30.TabIndex = 68;
             this.label30.Text = "Due Date:";
             // 
@@ -1127,10 +1109,9 @@
             this.pkrInvoiceDueFrom.CustomFormat = "MMMM dd, yyyy";
             this.pkrInvoiceDueFrom.Enabled = false;
             this.pkrInvoiceDueFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pkrInvoiceDueFrom.Location = new System.Drawing.Point(399, 83);
-            this.pkrInvoiceDueFrom.Margin = new System.Windows.Forms.Padding(2);
+            this.pkrInvoiceDueFrom.Location = new System.Drawing.Point(599, 127);
             this.pkrInvoiceDueFrom.Name = "pkrInvoiceDueFrom";
-            this.pkrInvoiceDueFrom.Size = new System.Drawing.Size(138, 20);
+            this.pkrInvoiceDueFrom.Size = new System.Drawing.Size(205, 26);
             this.pkrInvoiceDueFrom.TabIndex = 67;
             // 
             // dgvSearchInvoice
@@ -1150,13 +1131,12 @@
             this.SearchDueDateColumn,
             this.SearchEditColumn,
             this.InvoiceId});
-            this.dgvSearchInvoice.Location = new System.Drawing.Point(16, 162);
-            this.dgvSearchInvoice.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvSearchInvoice.Location = new System.Drawing.Point(24, 249);
             this.dgvSearchInvoice.Name = "dgvSearchInvoice";
             this.dgvSearchInvoice.ReadOnly = true;
             this.dgvSearchInvoice.RowHeadersVisible = false;
             this.dgvSearchInvoice.RowTemplate.Height = 24;
-            this.dgvSearchInvoice.Size = new System.Drawing.Size(760, 441);
+            this.dgvSearchInvoice.Size = new System.Drawing.Size(1155, 651);
             this.dgvSearchInvoice.TabIndex = 66;
             this.dgvSearchInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchInvoice_CellContentClick);
             // 
@@ -1209,10 +1189,9 @@
             // 
             // EditRec_Reset
             // 
-            this.EditRec_Reset.Location = new System.Drawing.Point(336, 118);
-            this.EditRec_Reset.Margin = new System.Windows.Forms.Padding(2);
+            this.EditRec_Reset.Location = new System.Drawing.Point(504, 182);
             this.EditRec_Reset.Name = "EditRec_Reset";
-            this.EditRec_Reset.Size = new System.Drawing.Size(71, 30);
+            this.EditRec_Reset.Size = new System.Drawing.Size(106, 46);
             this.EditRec_Reset.TabIndex = 63;
             this.EditRec_Reset.Text = "Reset";
             this.EditRec_Reset.UseVisualStyleBackColor = true;
@@ -1220,10 +1199,9 @@
             // 
             // EditRec_Search
             // 
-            this.EditRec_Search.Location = new System.Drawing.Point(414, 118);
-            this.EditRec_Search.Margin = new System.Windows.Forms.Padding(2);
+            this.EditRec_Search.Location = new System.Drawing.Point(621, 182);
             this.EditRec_Search.Name = "EditRec_Search";
-            this.EditRec_Search.Size = new System.Drawing.Size(71, 30);
+            this.EditRec_Search.Size = new System.Drawing.Size(106, 46);
             this.EditRec_Search.TabIndex = 62;
             this.EditRec_Search.Text = "Search";
             this.EditRec_Search.UseVisualStyleBackColor = true;
@@ -1234,55 +1212,49 @@
             this.pkrSearchInvoiceTo.CustomFormat = "MMMM dd, yyyy";
             this.pkrSearchInvoiceTo.Enabled = false;
             this.pkrSearchInvoiceTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pkrSearchInvoiceTo.Location = new System.Drawing.Point(598, 37);
-            this.pkrSearchInvoiceTo.Margin = new System.Windows.Forms.Padding(2);
+            this.pkrSearchInvoiceTo.Location = new System.Drawing.Point(897, 57);
             this.pkrSearchInvoiceTo.Name = "pkrSearchInvoiceTo";
-            this.pkrSearchInvoiceTo.Size = new System.Drawing.Size(138, 20);
+            this.pkrSearchInvoiceTo.Size = new System.Drawing.Size(205, 26);
             this.pkrSearchInvoiceTo.TabIndex = 61;
             // 
             // Label16
             // 
             this.Label16.AutoSize = true;
-            this.Label16.Location = new System.Drawing.Point(571, 39);
-            this.Label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label16.Location = new System.Drawing.Point(857, 60);
             this.Label16.Name = "Label16";
-            this.Label16.Size = new System.Drawing.Size(23, 13);
+            this.Label16.Size = new System.Drawing.Size(31, 20);
             this.Label16.TabIndex = 60;
             this.Label16.Text = "To:";
             // 
             // Label15
             // 
             this.Label15.AutoSize = true;
-            this.Label15.Location = new System.Drawing.Point(362, 40);
-            this.Label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label15.Location = new System.Drawing.Point(543, 62);
             this.Label15.Name = "Label15";
-            this.Label15.Size = new System.Drawing.Size(33, 13);
+            this.Label15.Size = new System.Drawing.Size(50, 20);
             this.Label15.TabIndex = 59;
             this.Label15.Text = "From:";
             // 
             // txtSearchCustomerName
             // 
-            this.txtSearchCustomerName.Location = new System.Drawing.Point(129, 60);
-            this.txtSearchCustomerName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchCustomerName.Location = new System.Drawing.Point(194, 92);
             this.txtSearchCustomerName.Name = "txtSearchCustomerName";
-            this.txtSearchCustomerName.Size = new System.Drawing.Size(192, 20);
+            this.txtSearchCustomerName.Size = new System.Drawing.Size(286, 26);
             this.txtSearchCustomerName.TabIndex = 58;
             // 
             // txtSearchPersonnel
             // 
-            this.txtSearchPersonnel.Location = new System.Drawing.Point(129, 83);
-            this.txtSearchPersonnel.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchPersonnel.Location = new System.Drawing.Point(194, 127);
             this.txtSearchPersonnel.Name = "txtSearchPersonnel";
-            this.txtSearchPersonnel.Size = new System.Drawing.Size(192, 20);
+            this.txtSearchPersonnel.Size = new System.Drawing.Size(286, 26);
             this.txtSearchPersonnel.TabIndex = 57;
             // 
             // Label11
             // 
             this.Label11.AutoSize = true;
-            this.Label11.Location = new System.Drawing.Point(14, 85);
-            this.Label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label11.Location = new System.Drawing.Point(21, 131);
             this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(111, 13);
+            this.Label11.Size = new System.Drawing.Size(165, 20);
             this.Label11.TabIndex = 56;
             this.Label11.Text = "Sales Representative:";
             // 
@@ -1290,29 +1262,26 @@
             // 
             this.Label14.AutoSize = true;
             this.Label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label14.Location = new System.Drawing.Point(15, 62);
-            this.Label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label14.Location = new System.Drawing.Point(23, 95);
             this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(82, 13);
+            this.Label14.Size = new System.Drawing.Size(124, 20);
             this.Label14.TabIndex = 55;
             this.Label14.Text = "Customer Name";
             // 
             // Label12
             // 
             this.Label12.AutoSize = true;
-            this.Label12.Location = new System.Drawing.Point(339, 17);
-            this.Label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label12.Location = new System.Drawing.Point(509, 26);
             this.Label12.Name = "Label12";
-            this.Label12.Size = new System.Drawing.Size(60, 13);
+            this.Label12.Size = new System.Drawing.Size(89, 20);
             this.Label12.TabIndex = 54;
             this.Label12.Text = "Entry Date:";
             // 
             // txtSearchInvoiceNumber
             // 
-            this.txtSearchInvoiceNumber.Location = new System.Drawing.Point(129, 37);
-            this.txtSearchInvoiceNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchInvoiceNumber.Location = new System.Drawing.Point(194, 57);
             this.txtSearchInvoiceNumber.Name = "txtSearchInvoiceNumber";
-            this.txtSearchInvoiceNumber.Size = new System.Drawing.Size(192, 20);
+            this.txtSearchInvoiceNumber.Size = new System.Drawing.Size(286, 26);
             this.txtSearchInvoiceNumber.TabIndex = 48;
             // 
             // pkrSearchInvoiceFrom
@@ -1320,19 +1289,17 @@
             this.pkrSearchInvoiceFrom.CustomFormat = "MMMM dd, yyyy";
             this.pkrSearchInvoiceFrom.Enabled = false;
             this.pkrSearchInvoiceFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pkrSearchInvoiceFrom.Location = new System.Drawing.Point(399, 37);
-            this.pkrSearchInvoiceFrom.Margin = new System.Windows.Forms.Padding(2);
+            this.pkrSearchInvoiceFrom.Location = new System.Drawing.Point(599, 57);
             this.pkrSearchInvoiceFrom.Name = "pkrSearchInvoiceFrom";
-            this.pkrSearchInvoiceFrom.Size = new System.Drawing.Size(138, 20);
+            this.pkrSearchInvoiceFrom.Size = new System.Drawing.Size(205, 26);
             this.pkrSearchInvoiceFrom.TabIndex = 52;
             // 
             // Label13
             // 
             this.Label13.AutoSize = true;
-            this.Label13.Location = new System.Drawing.Point(15, 37);
-            this.Label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label13.Location = new System.Drawing.Point(23, 57);
             this.Label13.Name = "Label13";
-            this.Label13.Size = new System.Drawing.Size(85, 13);
+            this.Label13.Size = new System.Drawing.Size(123, 20);
             this.Label13.TabIndex = 49;
             this.Label13.Text = "Invoice Number:";
             // 
@@ -1345,21 +1312,19 @@
             this.tabTableViewer.Controls.Add(this.dgvRecievables);
             this.tabTableViewer.Controls.Add(this.dgvPersonnel);
             this.tabTableViewer.Controls.Add(this.dgvCustomer);
-            this.tabTableViewer.Location = new System.Drawing.Point(4, 22);
-            this.tabTableViewer.Margin = new System.Windows.Forms.Padding(2);
+            this.tabTableViewer.Location = new System.Drawing.Point(4, 29);
             this.tabTableViewer.Name = "tabTableViewer";
-            this.tabTableViewer.Padding = new System.Windows.Forms.Padding(2);
-            this.tabTableViewer.Size = new System.Drawing.Size(791, 607);
+            this.tabTableViewer.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTableViewer.Size = new System.Drawing.Size(1206, 928);
             this.tabTableViewer.TabIndex = 3;
             this.tabTableViewer.Text = "Table Viewer";
             this.tabTableViewer.UseVisualStyleBackColor = true;
             // 
             // btnRefreshTables
             // 
-            this.btnRefreshTables.Location = new System.Drawing.Point(257, 5);
-            this.btnRefreshTables.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefreshTables.Location = new System.Drawing.Point(385, 7);
             this.btnRefreshTables.Name = "btnRefreshTables";
-            this.btnRefreshTables.Size = new System.Drawing.Size(98, 46);
+            this.btnRefreshTables.Size = new System.Drawing.Size(147, 71);
             this.btnRefreshTables.TabIndex = 6;
             this.btnRefreshTables.Text = "Refresh Tables";
             this.btnRefreshTables.UseVisualStyleBackColor = true;
@@ -1373,12 +1338,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPayments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPayments.Location = new System.Drawing.Point(4, 531);
-            this.dgvPayments.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvPayments.Location = new System.Drawing.Point(6, 817);
             this.dgvPayments.Name = "dgvPayments";
             this.dgvPayments.ReadOnly = true;
             this.dgvPayments.RowTemplate.Height = 24;
-            this.dgvPayments.Size = new System.Drawing.Size(783, 90);
+            this.dgvPayments.Size = new System.Drawing.Size(1190, 125);
             this.dgvPayments.TabIndex = 5;
             // 
             // dgvTransactions
@@ -1389,12 +1353,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTransactions.Location = new System.Drawing.Point(4, 431);
-            this.dgvTransactions.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvTransactions.Location = new System.Drawing.Point(6, 663);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.ReadOnly = true;
             this.dgvTransactions.RowTemplate.Height = 24;
-            this.dgvTransactions.Size = new System.Drawing.Size(783, 94);
+            this.dgvTransactions.Size = new System.Drawing.Size(1190, 132);
             this.dgvTransactions.TabIndex = 4;
             // 
             // dgvProducts
@@ -1405,12 +1368,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(4, 333);
-            this.dgvProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvProducts.Location = new System.Drawing.Point(6, 512);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
             this.dgvProducts.RowTemplate.Height = 24;
-            this.dgvProducts.Size = new System.Drawing.Size(783, 93);
+            this.dgvProducts.Size = new System.Drawing.Size(1190, 130);
             this.dgvProducts.TabIndex = 3;
             // 
             // dgvRecievables
@@ -1421,12 +1383,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRecievables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRecievables.Location = new System.Drawing.Point(4, 238);
-            this.dgvRecievables.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvRecievables.Location = new System.Drawing.Point(6, 366);
             this.dgvRecievables.Name = "dgvRecievables";
             this.dgvRecievables.ReadOnly = true;
             this.dgvRecievables.RowTemplate.Height = 24;
-            this.dgvRecievables.Size = new System.Drawing.Size(783, 90);
+            this.dgvRecievables.Size = new System.Drawing.Size(1190, 125);
             this.dgvRecievables.TabIndex = 2;
             // 
             // dgvPersonnel
@@ -1437,12 +1398,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonnel.Location = new System.Drawing.Point(4, 144);
-            this.dgvPersonnel.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvPersonnel.Location = new System.Drawing.Point(6, 222);
             this.dgvPersonnel.Name = "dgvPersonnel";
             this.dgvPersonnel.ReadOnly = true;
             this.dgvPersonnel.RowTemplate.Height = 24;
-            this.dgvPersonnel.Size = new System.Drawing.Size(783, 89);
+            this.dgvPersonnel.Size = new System.Drawing.Size(1190, 124);
             this.dgvPersonnel.TabIndex = 1;
             // 
             // dgvCustomer
@@ -1453,28 +1413,29 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomer.Location = new System.Drawing.Point(4, 55);
-            this.dgvCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvCustomer.Location = new System.Drawing.Point(6, 85);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.ReadOnly = true;
             this.dgvCustomer.RowTemplate.Height = 24;
-            this.dgvCustomer.Size = new System.Drawing.Size(783, 84);
+            this.dgvCustomer.Size = new System.Drawing.Size(1190, 116);
             this.dgvCustomer.TabIndex = 0;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(501, 18);
+            this.label26.Location = new System.Drawing.Point(752, 27);
+            this.label26.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(40, 13);
+            this.label26.Size = new System.Drawing.Size(59, 20);
             this.label26.TabIndex = 31;
             this.label26.Text = "USER:";
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(736, 12);
+            this.btnAddUser.Location = new System.Drawing.Point(1104, 18);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(5);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(72, 25);
+            this.btnAddUser.Size = new System.Drawing.Size(108, 38);
             this.btnAddUser.TabIndex = 33;
             this.btnAddUser.Text = "ADD USER";
             this.btnAddUser.UseVisualStyleBackColor = true;
@@ -1483,23 +1444,24 @@
             // ddlUserList
             // 
             this.ddlUserList.FormattingEnabled = true;
-            this.ddlUserList.Location = new System.Drawing.Point(547, 15);
+            this.ddlUserList.Location = new System.Drawing.Point(821, 23);
+            this.ddlUserList.Margin = new System.Windows.Forms.Padding(5);
             this.ddlUserList.Name = "ddlUserList";
-            this.ddlUserList.Size = new System.Drawing.Size(183, 21);
+            this.ddlUserList.Size = new System.Drawing.Size(272, 28);
             this.ddlUserList.TabIndex = 34;
             this.ddlUserList.SelectedIndexChanged += new System.EventHandler(this.ddlUserList_SelectedIndexChanged);
             this.ddlUserList.TextChanged += new System.EventHandler(this.ddlUserList_TextChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 686);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1241, 838);
             this.Controls.Add(this.ddlUserList);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.Add_Rec);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Accounts Management";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1643,6 +1605,9 @@
         internal System.Windows.Forms.CheckBox chkUnpaidReports;
         internal System.Windows.Forms.CheckBox chkPartiallyPaidReportsOnly;
         internal System.Windows.Forms.CheckBox chkPaidReports;
+        internal System.Windows.Forms.TextBox txtReportCustomerName;
+        internal System.Windows.Forms.Label label31;
+        internal System.Windows.Forms.CheckBox chkSalesRepresentative;
     }
 }
 

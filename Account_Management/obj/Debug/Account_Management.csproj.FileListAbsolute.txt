@@ -24,3 +24,12 @@ C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\A
 C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\Account_Management.UserManagement.resources
 C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\Account_Management.ViewEditInvoiceItem.resources
 C:\Users\Krismon\Desktop\Account_Management\trunk\Account_Management\obj\Debug\Account_Management.csproj.GenerateResource.Cache
+C:\Users\Krismon\Source\Repos\Account_Management\Account_Management\bin\Debug\Account_Management.exe.config
+C:\Users\Krismon\Source\Repos\Account_Management\Account_Management\obj\Debug\Account_Management.exe
+C:\Users\Krismon\Source\Repos\Account_Management\Account_Management\obj\Debug\Account_Management.pdb
+C:\Users\Krismon\Source\Repos\Account_Management\Account_Management\obj\Debug\Account_Management.AddItem.resources
+C:\Users\Krismon\Source\Repos\Account_Management\Account_Management\obj\Debug\Account_Management.Form1.resources
+C:\Users\Krismon\Source\Repos\Account_Management\Account_Management\obj\Debug\Account_Management.Properties.Resources.resources
+C:\Users\Krismon\Source\Repos\Account_Management\Account_Management\obj\Debug\Account_Management.UserManagement.resources
+C:\Users\Krismon\Source\Repos\Account_Management\Account_Management\obj\Debug\Account_Management.ViewEditInvoiceItem.resources
+C:\Users\Krismon\Source\Repos\Account_Management\Account_Management\obj\Debug\Account_Management.csproj.GenerateResource.Cache
